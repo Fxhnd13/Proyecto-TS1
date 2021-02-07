@@ -60,8 +60,7 @@ public class Imagen {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
-    
-    
+ 
     public void colocarImagen(JLabel label){
         ImageIcon imIcon = new ImageIcon(this.dirEscritorio);
         Icon icono = new ImageIcon(imIcon.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));

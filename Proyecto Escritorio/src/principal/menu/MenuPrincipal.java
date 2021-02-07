@@ -8,22 +8,13 @@ package principal.menu;
 import api.login.ArchivoLogin;
 import frontend.gui.CalendarioHaab;
 import gui.infonahuales.VentanaInfoNahuales;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.UnsupportedLookAndFeelException;
 import modelos.objetos.Usuario;
 import principal.backend.perfil_usuario.Informacion;
 import principal.frontend.gui.calendari_cholquij.FrameCalendario;
 import principal.frontend.gui.perfil_usuario.FramePerfil;
-import principal.ui.EventoDeTiempo;
 import principal.ui.LineaDeTiempo;
 
 /**
@@ -42,10 +33,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal(Usuario user) {
         this.user = user;
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
         setLocationRelativeTo(null);       
-        
         setBackground();
-        
     }
 
     
@@ -81,6 +71,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Calendario Maya");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btnCholqij.setBackground(new java.awt.Color(204, 204, 204));
         btnCholqij.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -211,14 +206,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCholqijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqijActionPerformed
-   try {
-            // TODO code application logic here
-        javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-   } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-        JOptionPane.showMessageDialog(null, "No se encuentra el estilo, por lo tanto se utlizara por defecto...");
-   }
-    FrameCalendario calendarioCholquij = new FrameCalendario();
-    calendarioCholquij.setVisible(true);
+        FrameCalendario calendarioCholquij = new FrameCalendario();
+        calendarioCholquij.setVisible(true);
     }//GEN-LAST:event_btnCholqijActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
@@ -230,14 +219,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_btnPerfilActionPerformed
     private void setBackground() {
-        
         JLabel backgroundLbl = new JLabel();
-        backgroundLbl.setSize(996, 559);
-        backgroundLbl.setLocation(0, 0);
-        backgroundLbl.setIcon(BG);
         this.add(backgroundLbl);
-        backgroundLbl.setVisible(true);
-
+        backgroundLbl.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        rsscalelabel.RSScaleLabel.setScaleLabel(backgroundLbl, "Imagenes/BackGroundMainMenu.jpg");
     }
     private void btnCholqij1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij1ActionPerformed
         CalendarioHaab calendario = new CalendarioHaab();
@@ -263,6 +248,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         archivoLogin.escribirArchivo(null);
         System.exit(0);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
