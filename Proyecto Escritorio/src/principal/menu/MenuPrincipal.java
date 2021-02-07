@@ -50,7 +50,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         pnlMenu = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         btnCholqij = new javax.swing.JButton();
         btnCholqij1 = new javax.swing.JButton();
         btnCholqij2 = new javax.swing.JButton();
@@ -66,16 +65,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setResizable(false);
 
         pnlMenu.setBackground(new java.awt.Color(51, 153, 255));
-
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Calendario Maya");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         btnCholqij.setBackground(new java.awt.Color(204, 204, 204));
         btnCholqij.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -143,8 +132,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCholqij)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCholqij1)
@@ -154,7 +141,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(btnNahuales)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLinea)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
                 .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -163,7 +150,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(pnlMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
                     .addComponent(btnCholqij)
                     .addComponent(btnCholqij1)
                     .addComponent(btnCholqij2)
@@ -207,6 +193,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnCholqijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqijActionPerformed
         FrameCalendario calendarioCholquij = new FrameCalendario();
+        Centrador.center(calendarioCholquij);
         calendarioCholquij.setVisible(true);
     }//GEN-LAST:event_btnCholqijActionPerformed
 
@@ -215,6 +202,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Usuario user2 = info.buscarDatos(user.getUsername());
         if(user2 != null){
             FramePerfil perfil = new FramePerfil(null, true, user);
+            Centrador.center(perfil);
             perfil.setVisible(true);
         } 
     }//GEN-LAST:event_btnPerfilActionPerformed
@@ -226,6 +214,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     private void btnCholqij1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij1ActionPerformed
         CalendarioHaab calendario = new CalendarioHaab();
+        Centrador.center(calendario);
         calendario.setVisible(true);
     }//GEN-LAST:event_btnCholqij1ActionPerformed
 
@@ -235,12 +224,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnNahualesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNahualesActionPerformed
         VentanaInfoNahuales ventanaInfoNahuales = new VentanaInfoNahuales();
+        Centrador.center(ventanaInfoNahuales);
         ventanaInfoNahuales.setVisible(true);
     }//GEN-LAST:event_btnNahualesActionPerformed
 
     private void btnLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLineaActionPerformed
-        
         LineaDeTiempo linea = new LineaDeTiempo(user);
+        Centrador.center(linea);
         linea.setVisible(true);
     }//GEN-LAST:event_btnLineaActionPerformed
 
@@ -248,10 +238,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         archivoLogin.escribirArchivo(null);
         System.exit(0);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -262,7 +248,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnLinea;
     private javax.swing.JButton btnNahuales;
     private javax.swing.JButton btnPerfil;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
