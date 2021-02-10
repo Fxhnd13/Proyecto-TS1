@@ -42,23 +42,19 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         this.setContentPane(fondoPanel);
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        scrollPane.getViewport().setOpaque(false);
-        scrollPane.setBorder(null);
+        panelInfo.setBackground(new Color(255,255,255,100));
+        SignificadoPanel.setBackground(new Color(255,255,255,100));
+        DescripcionPanel.setBackground(new Color(255,255,255,100));
         //scrollPane.setBackground(new Color(255, 255, 255, 100));
         //panelInfo.setBackground(new Color(255, 255, 255, 100));
         textPaneSig.setEditable(false);
         textPaneDes.setEditable(false);
-        labelDescripcion.setFont(labelSignificado.getFont());
-        labelDescripcion.setBackground(labelSignificado.getBackground());
-        labelDescripcion.setForeground(labelSignificado.getForeground());
+//        labelDescripcion.setFont(labelSignificado.getFont());
+//        labelDescripcion.setBackground(labelSignificado.getBackground());
+//        labelDescripcion.setForeground(labelSignificado.getForeground());
         
 //        textPaneSig.setBackground(new Color(255, 255, 255, 100));
         //textPaneSig.setOpaque(false);
-        
-        panelInfo.add(textPaneSig);
-        panelInfo.add(labelDescripcion);
-        panelInfo.add(textPaneDes);
         
         ImageIcon imIconAnterior = new ImageIcon("./src/gui/imagenes/anterior.png");
         Icon iconoAnterior = new ImageIcon(imIconAnterior.getImage().getScaledInstance(botonAnterior.getWidth(), botonAnterior.getHeight(), Image.SCALE_DEFAULT));
@@ -70,13 +66,12 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         //Levantamos el listado de nahuales en la db y lo agragamos y lista ya estaria fucionando al 100
         listaNahuales = (ArrayList<Nahual>) nahualDb.getNahuales();
         pintar();
-        setPosiciones();
     }
     public void setPosiciones(){
         
-        textPaneSig.setBounds(labelSignificado.getX(), labelSignificado.getHeight()+labelSignificado.getY()+2, panelInfo.getWidth()-100, calcularFilas(textPaneSig.getText())*25);
-        labelDescripcion.setBounds(labelSignificado.getX(), labelSignificado.getHeight()+textPaneSig.getHeight()+20, labelSignificado.getWidth()+10, labelSignificado.getHeight());
-        textPaneDes.setBounds(labelDescripcion.getX(), labelSignificado.getHeight()+textPaneSig.getHeight()+labelDescripcion.getHeight()+25, panelInfo.getWidth()-100, calcularFilas(textPaneDes.getText())*25);
+//        textPaneSig.setBounds(labelSignificado.getX(), labelSignificado.getHeight()+labelSignificado.getY()+2, panelInfo.getWidth()-100, calcularFilas(textPaneSig.getText())*25);
+//        labelDescripcion.setBounds(labelSignificado.getX(), labelSignificado.getHeight()+textPaneSig.getHeight()+20, labelSignificado.getWidth()+10, labelSignificado.getHeight());
+//        textPaneDes.setBounds(labelDescripcion.getX(), labelSignificado.getHeight()+textPaneSig.getHeight()+labelDescripcion.getHeight()+25, panelInfo.getWidth()-100, calcularFilas(textPaneDes.getText())*25);
         
 //        int lineas = textPaneSig.set
         //String texto = textPaneDes.getText();
@@ -128,8 +123,8 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
             labelPrincipal.setIcon(getIconNahual(listaNahuales.get(indice), labelPrincipal));
             labelDerecha.setIcon(getIconNahual(listaNahuales.get(indice+1), labelDerecha));
         }
-        textPaneDes.setText(listaNahuales.get(indice).getDescripcion());
-        textPaneSig.setText(listaNahuales.get(indice).getSignificado());
+        significadoTexto.setText(listaNahuales.get(indice).getSignificado());
+        descripcionTexto.setText(listaNahuales.get(indice).getDescripcion());
         labelNombre.setText(listaNahuales.get(indice).getId()+". "+listaNahuales.get(indice).getNombre());
     }
     private void pintar(){
@@ -210,11 +205,16 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         botonAnterior = new javax.swing.JButton();
         date = new com.toedter.calendar.JDateChooser();
         btnCalcular = new javax.swing.JButton();
-        scrollPane = new javax.swing.JScrollPane();
         panelInfo = new javax.swing.JPanel();
-        labelSignificado = new javax.swing.JLabel();
+        SignificadoPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        significadoTexto = new javax.swing.JEditorPane();
+        DescripcionPanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        descripcionTexto = new javax.swing.JEditorPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setSize(new java.awt.Dimension(550, 700));
 
         PanelNav.setOpaque(false);
 
@@ -251,12 +251,47 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
             }
         });
 
-        scrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setToolTipText("");
+        SignificadoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Significado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        SignificadoPanel.setOpaque(false);
 
-        labelSignificado.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        labelSignificado.setForeground(new java.awt.Color(0, 0, 255));
-        labelSignificado.setText("Significado");
+        jScrollPane1.setViewportView(significadoTexto);
+
+        javax.swing.GroupLayout SignificadoPanelLayout = new javax.swing.GroupLayout(SignificadoPanel);
+        SignificadoPanel.setLayout(SignificadoPanelLayout);
+        SignificadoPanelLayout.setHorizontalGroup(
+            SignificadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SignificadoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SignificadoPanelLayout.setVerticalGroup(
+            SignificadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SignificadoPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        DescripcionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripcion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        DescripcionPanel.setOpaque(false);
+
+        jScrollPane3.setViewportView(descripcionTexto);
+
+        javax.swing.GroupLayout DescripcionPanelLayout = new javax.swing.GroupLayout(DescripcionPanel);
+        DescripcionPanel.setLayout(DescripcionPanelLayout);
+        DescripcionPanelLayout.setHorizontalGroup(
+            DescripcionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DescripcionPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+        );
+        DescripcionPanelLayout.setVerticalGroup(
+            DescripcionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DescripcionPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout panelInfoLayout = new javax.swing.GroupLayout(panelInfo);
         panelInfo.setLayout(panelInfoLayout);
@@ -264,82 +299,80 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
             panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelSignificado)
-                .addContainerGap(732, Short.MAX_VALUE))
+                .addGroup(panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SignificadoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DescripcionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelInfoLayout.setVerticalGroup(
             panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelSignificado)
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addComponent(SignificadoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DescripcionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        scrollPane.setViewportView(panelInfo);
 
         javax.swing.GroupLayout PanelNavLayout = new javax.swing.GroupLayout(PanelNav);
         PanelNav.setLayout(PanelNavLayout);
         PanelNavLayout.setHorizontalGroup(
             PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNavLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelNavLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelNavLayout.createSequentialGroup()
-                                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCalcular))
-                            .addGroup(PanelNavLayout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labalIzquierda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(10, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNavLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelNavLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(PanelNavLayout.createSequentialGroup()
-                                .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(labalIzquierda, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(labelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(labelDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCalcular))
+                    .addGroup(PanelNavLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(89, 89, 89))
         );
         PanelNavLayout.setVerticalGroup(
             PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelNavLayout.createSequentialGroup()
                 .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelNavLayout.createSequentialGroup()
-                        .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNavLayout.createSequentialGroup()
-                                    .addGap(51, 51, 51)
-                                    .addComponent(labelDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(38, 38, 38))
-                                .addGroup(PanelNavLayout.createSequentialGroup()
-                                    .addGap(90, 90, 90)
-                                    .addComponent(labalIzquierda, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(PanelNavLayout.createSequentialGroup()
-                                    .addGap(122, 122, 122)
-                                    .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(PanelNavLayout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(40, 40, 40))
-                    .addComponent(labelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49)
+                        .addComponent(labalIzquierda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelNavLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(labelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelNavLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(labelDerecha, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelNavLayout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(botonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelNavLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(botonAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(labelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelNavLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCalcular))
-                .addGap(27, 27, 27)
-                .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(panelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelNav, java.awt.BorderLayout.CENTER);
@@ -347,11 +380,18 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        if(date.getDate()!=null){
+            calcularFecha();
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe de seleccionar o ingresar una fecha");
+        }
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
     private void botonAnteriorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAnteriorMouseClicked
         if(verificarNahuales()){
             anterior();
             pintarNahuales();
-            setPosiciones();
             date.setDate(null);
         }
     }//GEN-LAST:event_botonAnteriorMouseClicked
@@ -360,36 +400,28 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         if(verificarNahuales()){
             siguiente();
             pintarNahuales();
-            setPosiciones();
             date.setDate(null);
         }
     }//GEN-LAST:event_botonSiguienteMouseClicked
 
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if(date.getDate()!=null){
-            calcularFecha();
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe de seleccionar o ingresar una fecha");
-        }
-        
-        
-        
-    }//GEN-LAST:event_btnCalcularActionPerformed
-
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel DescripcionPanel;
     private javax.swing.JPanel PanelNav;
+    private javax.swing.JPanel SignificadoPanel;
     private javax.swing.JButton botonAnterior;
     private javax.swing.JButton botonSiguiente;
     private javax.swing.JButton btnCalcular;
     private com.toedter.calendar.JDateChooser date;
+    private javax.swing.JEditorPane descripcionTexto;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labalIzquierda;
     private javax.swing.JLabel labelDerecha;
     private javax.swing.JLabel labelNombre;
     private javax.swing.JLabel labelPrincipal;
-    private javax.swing.JLabel labelSignificado;
     private javax.swing.JPanel panelInfo;
-    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JEditorPane significadoTexto;
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel{
