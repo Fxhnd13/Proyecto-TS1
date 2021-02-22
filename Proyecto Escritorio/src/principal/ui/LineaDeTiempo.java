@@ -5,6 +5,7 @@
  */
 package principal.ui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.ImageIcon;
@@ -21,7 +22,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
 
     private ArrayList<EventoDeTiempo> eventos;
     private Usuario usuario;
-    public final static ImageIcon BG = new ImageIcon("Imagenes/fondoLineaTiempo.jpg");
+    public final static ImageIcon BG = new ImageIcon("Imagenes/fondoHistoria.jpg");
     private int index = 0;
 
     /**
@@ -37,7 +38,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         verificarUsuario();
         addPrimerHecho();
         setBackground();
-
+        jPanel1.setBackground(new Color(255,255,255,100));
     }
 
     public void obtenerHechos() {
@@ -53,14 +54,11 @@ public class LineaDeTiempo extends javax.swing.JFrame {
     }
 
     private void setBackground() {
-
         JLabel backgroundLbl = new JLabel();
-        backgroundLbl.setSize(1001, 411);
-        backgroundLbl.setLocation(0, 0);
-        backgroundLbl.setIcon(BG);
+        backgroundLbl.setSize(this.getSize());
+        rsscalelabel.RSScaleLabel.setScaleLabel(backgroundLbl, "Imagenes/fondoHistoria.jpg");
         this.add(backgroundLbl);
         backgroundLbl.setVisible(true);
-
     }
 
     /**
@@ -76,12 +74,15 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
-        navMenu4 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
         btnCholqij4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setText("Linea De Tiempo");
+        setSize(new java.awt.Dimension(700, 410));
+
+        jLabel1.setBackground(new java.awt.Color(73, 64, 21));
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("  Linea De Tiempo  ");
 
         jPanel1.setPreferredSize(new java.awt.Dimension(735, 300));
 
@@ -89,13 +90,16 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
+            .addGap(0, 263, Short.MAX_VALUE)
         );
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("<");
         jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +108,9 @@ public class LineaDeTiempo extends javax.swing.JFrame {
             }
         });
 
+        btnSiguiente.setBackground(new java.awt.Color(204, 204, 204));
+        btnSiguiente.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(0, 0, 0));
         btnSiguiente.setText(">");
         btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,20 +118,8 @@ public class LineaDeTiempo extends javax.swing.JFrame {
             }
         });
 
-        navMenu4.setBackground(new java.awt.Color(51, 153, 255));
-
-        jButton6.setBackground(new java.awt.Color(204, 204, 204));
-        jButton6.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("Agregar Evento");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
         btnCholqij4.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij4.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCholqij4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCholqij4.setForeground(new java.awt.Color(0, 0, 0));
         btnCholqij4.setText("Eliminar Evento");
         btnCholqij4.addActionListener(new java.awt.event.ActionListener() {
@@ -133,61 +128,60 @@ public class LineaDeTiempo extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout navMenu4Layout = new javax.swing.GroupLayout(navMenu4);
-        navMenu4.setLayout(navMenu4Layout);
-        navMenu4Layout.setHorizontalGroup(
-            navMenu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navMenu4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCholqij4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        navMenu4Layout.setVerticalGroup(
-            navMenu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navMenu4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(navMenu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(btnCholqij4))
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
+        jButton6.setBackground(new java.awt.Color(204, 204, 204));
+        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 0, 0));
+        jButton6.setText("Agregar Evento");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 230, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(254, 254, 254))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSiguiente)
+                                .addGap(305, 305, 305))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(384, 384, 384)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSiguiente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
-            .addComponent(navMenu4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(344, 344, 344))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton6)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCholqij4)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(navMenu4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(btnCholqij4))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                .addGap(31, 31, 31)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(btnSiguiente))
-                .addContainerGap())
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -242,7 +236,6 @@ public class LineaDeTiempo extends javax.swing.JFrame {
             jPanel1.validate();
             jPanel1.repaint();
         }
-
     }
 
     /**
@@ -250,31 +243,20 @@ public class LineaDeTiempo extends javax.swing.JFrame {
      */
     private void verificarUsuario() {
         if (usuario.getRol() == 1) {
-            navMenu4.setVisible(true);
+            jButton6.setVisible(true);
+            btnCholqij4.setVisible(true);
         } else {
-            navMenu4.setVisible(false);
+            jButton6.setVisible(false);
+            btnCholqij4.setVisible(false);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCholqij;
-    private javax.swing.JButton btnCholqij1;
-    private javax.swing.JButton btnCholqij2;
-    private javax.swing.JButton btnCholqij3;
     private javax.swing.JButton btnCholqij4;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel navMenu;
-    private javax.swing.JPanel navMenu1;
-    private javax.swing.JPanel navMenu2;
-    private javax.swing.JPanel navMenu3;
-    private javax.swing.JPanel navMenu4;
     // End of variables declaration//GEN-END:variables
 }

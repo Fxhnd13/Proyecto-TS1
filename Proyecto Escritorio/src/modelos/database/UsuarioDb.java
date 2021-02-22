@@ -46,7 +46,7 @@ public class UsuarioDb {
     public void actualizarUsuario(Usuario usuarioActualizar, String userNameAntiguo) {//actualizamos usuario
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE usuario SET "
-                    + "userName=? , password =? , email=?,  "
+                    + "userName=? ,userName password =? , email=?,  "
                     + "nombre=? ,  apellido=? , nacimiento= ? , "
                     + "telefono = ? , rol=?  "
                     + "WHERE username=?;");

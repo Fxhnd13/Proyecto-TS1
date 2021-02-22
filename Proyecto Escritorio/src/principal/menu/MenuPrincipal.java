@@ -8,6 +8,7 @@ package principal.menu;
 import api.login.ArchivoLogin;
 import frontend.gui.CalendarioHaab;
 import gui.infonahuales.VentanaInfoNahuales;
+import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -34,8 +35,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.user = user;
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        infoUsuarioPane.setBackground(new Color(255,255,255,100));
         setLocationRelativeTo(null);       
         setBackground();
+        informacionUsuario();
     }
 
     
@@ -57,6 +60,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnPerfil = new javax.swing.JButton();
         btnLinea = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
+        infoUsuarioPane = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        nombreLbl = new javax.swing.JLabel();
+        apellidoLbl = new javax.swing.JLabel();
+        correoLbl = new javax.swing.JLabel();
+        fechaLbl = new javax.swing.JLabel();
+        telefonoLbl = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -67,7 +81,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pnlMenu.setBackground(new java.awt.Color(51, 153, 255));
 
         btnCholqij.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCholqij.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCholqij.setForeground(new java.awt.Color(0, 0, 0));
         btnCholqij.setText("Calendario Cholqij");
         btnCholqij.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +91,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         btnCholqij1.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCholqij1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCholqij1.setForeground(new java.awt.Color(0, 0, 0));
         btnCholqij1.setText("Calendario Haab");
         btnCholqij1.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +101,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         btnCholqij2.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCholqij2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCholqij2.setForeground(new java.awt.Color(0, 0, 0));
         btnCholqij2.setText("Rueda Calendarica");
         btnCholqij2.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +111,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         btnNahuales.setBackground(new java.awt.Color(204, 204, 204));
-        btnNahuales.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnNahuales.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnNahuales.setForeground(new java.awt.Color(0, 0, 0));
         btnNahuales.setText("Nahuales");
         btnNahuales.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +121,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         btnPerfil.setBackground(new java.awt.Color(204, 204, 204));
-        btnPerfil.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnPerfil.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnPerfil.setForeground(new java.awt.Color(0, 0, 0));
-        btnPerfil.setText("Perfil");
+        btnPerfil.setText("Editar datos");
         btnPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPerfilActionPerformed(evt);
@@ -117,7 +131,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         btnLinea.setBackground(new java.awt.Color(204, 204, 204));
-        btnLinea.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnLinea.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnLinea.setForeground(new java.awt.Color(0, 0, 0));
         btnLinea.setText("Linea de Tiempo");
         btnLinea.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +156,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLinea)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                .addComponent(btnPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPerfil)
                 .addContainerGap())
         );
         pnlMenuLayout.setVerticalGroup(
@@ -160,7 +174,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         btnCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
-        btnCerrarSesion.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        btnCerrarSesion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnCerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btnCerrarSesion.setText("Cerrar Sesion");
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -169,21 +183,110 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel1.setText("Apellidos:");
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel2.setText("Nombres:");
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel3.setText("Correo:");
+
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel4.setText("Fecha de nacimiento:");
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 48)); // NOI18N
+        jLabel5.setText("Telefono:");
+
+        nombreLbl.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+
+        apellidoLbl.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+
+        correoLbl.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+
+        fechaLbl.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+
+        telefonoLbl.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+
+        javax.swing.GroupLayout infoUsuarioPaneLayout = new javax.swing.GroupLayout(infoUsuarioPane);
+        infoUsuarioPane.setLayout(infoUsuarioPaneLayout);
+        infoUsuarioPaneLayout.setHorizontalGroup(
+            infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(fechaLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                        .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(nombreLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(telefonoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(apellidoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(correoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(6, 6, 6))))
+        );
+        infoUsuarioPaneLayout.setVerticalGroup(
+            infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoUsuarioPaneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nombreLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(apellidoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(correoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCerrarSesion)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCerrarSesion))
+                    .addComponent(infoUsuarioPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(infoUsuarioPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCerrarSesion)
                 .addContainerGap())
         );
@@ -202,16 +305,27 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Usuario user2 = info.buscarDatos(user.getUsername());
         if(user2 != null){
             FramePerfil perfil = new FramePerfil(null, true, user);
-            Centrador.center(perfil);
+            perfil.setLocation(900, 120);
+            //Centrador.center(perfil);
             perfil.setVisible(true);
         } 
     }//GEN-LAST:event_btnPerfilActionPerformed
+    
+    private void informacionUsuario(){
+        correoLbl.setText(user.getEmail());
+        nombreLbl.setText(user.getNombre());
+        apellidoLbl.setText(user.getApellido());
+        if(user.getNacimiento() != null) fechaLbl.setText(user.getNacimiento().toString());
+        telefonoLbl.setText(user.getTelefono());
+    }
+    
     private void setBackground() {
         JLabel backgroundLbl = new JLabel();
         this.add(backgroundLbl);
         backgroundLbl.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         rsscalelabel.RSScaleLabel.setScaleLabel(backgroundLbl, "Imagenes/BackGroundMainMenu.jpg");
     }
+    
     private void btnCholqij1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij1ActionPerformed
         CalendarioHaab calendario = new CalendarioHaab();
         Centrador.center(calendario);
@@ -241,6 +355,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel apellidoLbl;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnCholqij;
     private javax.swing.JButton btnCholqij1;
@@ -248,7 +363,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnLinea;
     private javax.swing.JButton btnNahuales;
     private javax.swing.JButton btnPerfil;
+    private javax.swing.JLabel correoLbl;
+    private javax.swing.JLabel fechaLbl;
+    private javax.swing.JPanel infoUsuarioPane;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel nombreLbl;
     private javax.swing.JPanel pnlMenu;
+    private javax.swing.JLabel telefonoLbl;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,7 +30,7 @@ public class EventoDeTiempo extends javax.swing.JPanel {
         lblFecha.setText(hechoHistorico.getFechaInicio()+" A "+hechoHistorico.getFechaFinalizacion());
         
         }
-        this.setSize(800,300);
+        this.setSize(685,350);
     }
 
     /**
@@ -47,9 +47,13 @@ public class EventoDeTiempo extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         lblDescripcion = new javax.swing.JTextPane();
 
+        setOpaque(false);
+
+        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
         lblFecha.setText("Año");
 
         lblTitulo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Titulo");
 
@@ -60,15 +64,13 @@ public class EventoDeTiempo extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
                         .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2)))
+                        .addComponent(lblFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -79,8 +81,8 @@ public class EventoDeTiempo extends javax.swing.JPanel {
                     .addComponent(lblTitulo)
                     .addComponent(lblFecha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -42,9 +42,9 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         this.setContentPane(fondoPanel);
         initComponents();
         this.setLocationRelativeTo(null);
-        panelInfo.setBackground(new Color(255,255,255,100));
-        SignificadoPanel.setBackground(new Color(255,255,255,100));
-        DescripcionPanel.setBackground(new Color(255,255,255,100));
+        panelInfo.setBackground(new Color(255,255,255,50));
+        SignificadoPanel.setBackground(new Color(255,255,255,50));
+        DescripcionPanel.setBackground(new Color(255,255,255,50));
         //scrollPane.setBackground(new Color(255, 255, 255, 100));
         //panelInfo.setBackground(new Color(255, 255, 255, 100));
         textPaneSig.setEditable(false);
@@ -214,6 +214,7 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         descripcionTexto = new javax.swing.JEditorPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(550, 700));
 
         PanelNav.setOpaque(false);
@@ -244,6 +245,9 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
 
         date.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
+        btnCalcular.setBackground(new java.awt.Color(204, 204, 204));
+        btnCalcular.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
         btnCalcular.setText("Calcular Nahual de la Fecha");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,9 +255,10 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
             }
         });
 
-        SignificadoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Significado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        SignificadoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Significado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         SignificadoPanel.setOpaque(false);
 
+        significadoTexto.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(significadoTexto);
 
         javax.swing.GroupLayout SignificadoPanelLayout = new javax.swing.GroupLayout(SignificadoPanel);
@@ -272,9 +277,10 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        DescripcionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripcion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        DescripcionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descripcion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         DescripcionPanel.setOpaque(false);
 
+        descripcionTexto.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jScrollPane3.setViewportView(descripcionTexto);
 
         javax.swing.GroupLayout DescripcionPanelLayout = new javax.swing.GroupLayout(DescripcionPanel);
@@ -372,7 +378,7 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
                     .addComponent(btnCalcular))
                 .addGap(18, 18, 18)
                 .addComponent(panelInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         getContentPane().add(PanelNav, java.awt.BorderLayout.CENTER);

@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/backend/manejadores/ManejadorInformacion.java</file>
             <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/menu/MenuPrincipal.java</file>
-            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/gui/infonahuales/VentanaInfoNahuales.java</file>
-            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/frontend/gui/calendari_cholquij/FrameCalendario.java</file>
-            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/api/login/Login.java</file>
-            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/frontend/gui/CalendarioHaab.java</file>
+            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/ui/LineaDeTiempo.java</file>
+            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/frontend/gui/perfil_usuario/FramePerfil.java</file>
+            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/principal/ui/EventoDeTiempo.java</file>
+            <file>file:/C:/Users/jose_/Documents/NetBeansProjects/Proyecto-TS1/Proyecto%20Escritorio/src/modelos/database/UsuarioDb.java</file>
         </group>
     </open-files>
 </project-private>

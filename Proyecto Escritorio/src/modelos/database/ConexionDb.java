@@ -28,7 +28,7 @@ public class ConexionDb {//Aquí la conexion a la base de datos
             try {
                 //Buscamos nuestra db por medio de su ubicacion <entorno  local>, mandando el nombre y nuestra password
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                String stringConnection = "jdbc:mysql://localhost/"+nombreBaseDatos+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+                String stringConnection = "jdbc:mysql://localhost:3306/"+nombreBaseDatos+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                 conexion = DriverManager.getConnection(stringConnection, usuario, password);
                 
             }//en caso de que no se encuentre la base de datos 
