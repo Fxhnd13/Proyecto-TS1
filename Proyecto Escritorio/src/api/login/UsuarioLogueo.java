@@ -3,6 +3,11 @@ package api.login;
 
 import java.io.Serializable;
 
+/**
+ * Clase destinada a almacenar la informacion de los credenciales de un usuario que desea tener una sesion activa
+ * convirtiendose en archivo binario
+ * @author jose_
+ */
 public class UsuarioLogueo implements Serializable{
     
     private String correo, contrasenia;

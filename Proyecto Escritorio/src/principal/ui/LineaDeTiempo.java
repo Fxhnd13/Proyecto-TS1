@@ -15,7 +15,7 @@ import modelos.objetos.HechoHistorico;
 import modelos.objetos.Usuario;
 
 /**
- *
+ * Clase destianda a el manejo del frame para la linea de tiempo de los hechos historicos
  * @author sergio
  */
 public class LineaDeTiempo extends javax.swing.JFrame {
@@ -26,7 +26,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
     private int index = 0;
 
     /**
-     * Creates new form LineaDeTiempo
+     * Constructor, creates new form LineaDeTiempo
      */
     public LineaDeTiempo(Usuario usuario) {
         initComponents();
@@ -38,9 +38,11 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         verificarUsuario();
         addPrimerHecho();
         setBackground();
-        jPanel1.setBackground(new Color(255,255,255,100));
     }
 
+    /**
+     * Procedimiento para cargar los hechos historicos aprobados
+     */
     public void obtenerHechos() {
         HechoHistoricoDb hechoHistoricoDb = new HechoHistoricoDb();
         LinkedList<HechoHistorico> hechoHistoricos = hechoHistoricoDb.leerHechosHistoricos();
@@ -84,6 +86,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("  Linea De Tiempo  ");
 
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel1.setPreferredSize(new java.awt.Dimension(735, 300));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,7 +97,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 263, Short.MAX_VALUE)
+            .addGap(0, 257, Short.MAX_VALUE)
         );
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));

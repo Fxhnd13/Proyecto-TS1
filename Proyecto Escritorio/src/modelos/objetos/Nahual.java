@@ -5,11 +5,7 @@
  */
 package modelos.objetos;
 
-import java.awt.Image;
 import java.sql.Date;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 /**
  *
@@ -22,9 +18,24 @@ public class Nahual {
     private Date fechaInicio, fechaFinalizacion;
     private Imagen imagen;
 
+    /**
+     * Constructor
+     */
     public Nahual() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador del nahual
+     * @param nombre Nombre del nahual
+     * @param imagen Imagen del nahual
+     * @param significado Cadena de texto con el significado del nahual
+     * @param descripcion Cadena de texto con la descripcion del nahual
+     * @param fechaInicio Fecha de inicio del nahual
+     * @param fechaFinalizacion Fecha de la finalización del nahual
+     * @param nombreEsp Nombre en español del nahual
+     * @param nombreYucateco Nombre en yucateco del nahual
+     */
     public Nahual(int id, String nombre, Imagen imagen, String significado, String descripcion, Date fechaInicio, Date fechaFinalizacion, String nombreEsp, String nombreYucateco) {
         this.id = id;
         this.nombre = nombre;

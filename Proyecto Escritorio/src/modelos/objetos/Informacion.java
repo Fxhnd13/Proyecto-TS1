@@ -6,7 +6,7 @@
 package modelos.objetos;
 
 /**
- *
+ * Clase que almacena la información sobre articulos especificos
  * @author jose_
  */
 public class Informacion {
@@ -14,9 +14,19 @@ public class Informacion {
     private int id;
     private String titulo, descripcionEscritorio, descripcionWeb;
 
+    /**
+     * Constructor
+     */
     public Informacion() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador de la informacion
+     * @param titulo Titulo de la informacion
+     * @param descripcionEs Descripcion de escritorio de la informacion
+     * @param descripcionWeb Descripcion de la version web de la informacion
+     */
     public Informacion(int id, String titulo, String descripcionEs, String descripcionWeb) {
         this.id = id;
         this.titulo = titulo;

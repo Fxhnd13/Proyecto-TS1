@@ -11,11 +11,15 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 /**
- *
+ * Clase destinada al manejo de los frames y su posición en pantala
  * @author Jose Soberanis
  */
 public class Centrador {
 
+    /**
+     * Centra el componente en la pantalla (vertical y horizontalmente)
+     * @param c componente a centrar
+     */
     public static void center(Component c){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         Dimension frameSize = c.getSize();

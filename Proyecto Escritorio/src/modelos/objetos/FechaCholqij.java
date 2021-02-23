@@ -8,7 +8,7 @@ package modelos.objetos;
 import java.sql.Date;
 
 /**
- *
+ * Clase destinada a almacenar la información de una fecha del calendario cholqij
  * @author jose_
  */
 public class FechaCholqij {
@@ -19,9 +19,20 @@ public class FechaCholqij {
     private Date fecha;
     private String descripcion;
 
+    /**
+     * Constructor
+     */
     public FechaCholqij() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador de la fecha del calendario cholqij
+     * @param nahual Nahual de la fecha del calendario cholqij
+     * @param energia Energia de la fecha del calendario cholqij
+     * @param fecha Fecha de la fecha del calendario cholqij
+     * @param descripcion Descripcion de la fecha del calendrio cholqij
+     */
     public FechaCholqij(int id, Nahual nahual, Energia energia, Date fecha, String descripcion) {
         this.id = id;
         this.nahual = nahual;

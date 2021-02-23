@@ -5,9 +5,17 @@
  */
 package gui.infonahuales;
 
+/**
+ * Clase destinada al manejo de las rutas de las imagenes de cada Nahual
+ * @author jose_
+ */
 public class ManejadorNahualGUI {
     
-    
+    /**
+     * Funcion que se utiliza para obtener la ruta de la imagen de un nahual
+     * @param id Identificador del nahual del que necesitamos obtener la ruta de imagen
+     * @return La ruta de la imagen que deseamos
+     */
     public String getPathNahual(int id){
         switch(id){
             case 1:

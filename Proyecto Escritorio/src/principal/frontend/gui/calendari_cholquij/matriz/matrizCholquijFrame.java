@@ -6,7 +6,7 @@ import principal.backend.calendari_cholquij.matriz.manejadorCalendarioExpandido;
 
 
 /**
- *
+ * Clase destinada al manejo del frame de matriz del calendario cholqij
  * @author richard
  */
 public class matrizCholquijFrame extends javax.swing.JFrame {

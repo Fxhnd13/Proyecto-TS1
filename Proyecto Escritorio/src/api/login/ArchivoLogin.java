@@ -11,10 +11,18 @@ import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Clase destinada a el manejo del guardado de sesion activa y configuración del archivo con las credenciales
+ * @author jose_
+ */
 public class ArchivoLogin {
     
     private static File fileSesion = new File("./src/api/login/logueo.bin");
     
+    /**
+     * Funcion para verificar la existencia del archivo de credenciales
+     * @return si existe
+     */
     public boolean verificarExitenciaArchivo(){
         if(!fileSesion.exists()){
             escribirArchivo(null);
@@ -23,7 +31,10 @@ public class ArchivoLogin {
         return true;
     }
     
-    
+    /**
+     * Procedimiento para escribir las credenciales en un archivo binario
+     * @param usuarioLogueo credenciales del usuario
+     */
     public void escribirArchivo(UsuarioLogueo usuarioLogueo){
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileSesion));
@@ -38,6 +49,10 @@ public class ArchivoLogin {
         }
     }
     
+    /**
+     * Funcion para retornar las credenciales de un usuario si existe un archivo binario con las credenciales
+     * @return Usuario con las credenciales encontradas
+     */
     public UsuarioLogueo leerLogueo(){
         UsuarioLogueo usuarioLogueo = null;
         ObjectInputStream entrada = null;

@@ -19,7 +19,7 @@ import principal.frontend.gui.perfil_usuario.FramePerfil;
 import principal.ui.LineaDeTiempo;
 
 /**
- *
+ * Clase designada al frame del menu principal, contiene dentro las opciones de las que se puede hacer uso dentro de la aplicación de escritorio
  * @author luisGonzalez
  */
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -28,6 +28,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public final static ImageIcon BG = new ImageIcon("Imagenes/BackGroundMainMenu.jpg");
     private Usuario user;
     private ArchivoLogin archivoLogin = new ArchivoLogin();
+    
     /**
      * Creates new form MenuPrincipal
      */
@@ -38,7 +39,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         infoUsuarioPane.setBackground(new Color(255,255,255,100));
         setLocationRelativeTo(null);       
         setBackground();
-        informacionUsuario();
+        informacionUsuario(this.user);
     }
 
     
@@ -294,24 +295,36 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea una instancia del frame 'Calendario Cholqij'
+     * @param evt evento que lanza el procedimiento
+     */
     private void btnCholqijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqijActionPerformed
         FrameCalendario calendarioCholquij = new FrameCalendario();
         Centrador.center(calendarioCholquij);
         calendarioCholquij.setVisible(true);
     }//GEN-LAST:event_btnCholqijActionPerformed
 
+    /**
+     * Crea una instancia del frame 'FramePerfil' para modificar la información del usuario
+     * @param evt evento que lanza el procedimiento
+     */
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
         //cambiar el parametro nombre por el indicado
         Usuario user2 = info.buscarDatos(user.getUsername());
         if(user2 != null){
-            FramePerfil perfil = new FramePerfil(null, true, user);
+            FramePerfil perfil = new FramePerfil(this, true, user);
             perfil.setLocation(900, 120);
             //Centrador.center(perfil);
             perfil.setVisible(true);
         } 
     }//GEN-LAST:event_btnPerfilActionPerformed
     
-    private void informacionUsuario(){
+    /**
+     * Carga en pantalla la información del usuario logeado
+     * @param user usuario sobre el cual debemos mostrar la información en el frame principal
+     */
+    public void informacionUsuario(Usuario user){
         correoLbl.setText(user.getEmail());
         nombreLbl.setText(user.getNombre());
         apellidoLbl.setText(user.getApellido());
@@ -319,6 +332,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         telefonoLbl.setText(user.getTelefono());
     }
     
+    /**
+     * Procedimiento que carga la imagen predeterminada en la instancia del menú principal
+     */
     private void setBackground() {
         JLabel backgroundLbl = new JLabel();
         this.add(backgroundLbl);
@@ -326,28 +342,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(backgroundLbl, "Imagenes/BackGroundMainMenu.jpg");
     }
     
+    /**
+     * Procedimiento que crea una instancia de 'Calendario Haab'
+     * @param evt evento que lanza al procedimiento
+     */
     private void btnCholqij1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij1ActionPerformed
         CalendarioHaab calendario = new CalendarioHaab();
         Centrador.center(calendario);
         calendario.setVisible(true);
     }//GEN-LAST:event_btnCholqij1ActionPerformed
 
+    /**
+     * Sin implementación
+     */
     private void btnCholqij2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCholqij2ActionPerformed
 
+    /**
+     * Procedimiento que crea una instancia de 'VentanaInfoNahuales'
+     * @param evt evento que lanza al procedimiento
+     */
     private void btnNahualesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNahualesActionPerformed
         VentanaInfoNahuales ventanaInfoNahuales = new VentanaInfoNahuales();
         Centrador.center(ventanaInfoNahuales);
         ventanaInfoNahuales.setVisible(true);
     }//GEN-LAST:event_btnNahualesActionPerformed
 
+    /**
+     * Procedimiento que crea una instancia de 'LineaDeTiempo'
+     * @param evt evento que lanza al procedimiento
+     */
     private void btnLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLineaActionPerformed
         LineaDeTiempo linea = new LineaDeTiempo(user);
         Centrador.center(linea);
         linea.setVisible(true);
     }//GEN-LAST:event_btnLineaActionPerformed
 
+    /**
+     * Procedimiento que genera el archivo con las credenciales del usuario si se desea tener sesión activa
+     * @param evt evento que lanza al procedimiento
+     */
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         archivoLogin.escribirArchivo(null);
         System.exit(0);

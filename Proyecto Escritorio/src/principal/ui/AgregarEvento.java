@@ -10,22 +10,29 @@ import modelos.database.HechoHistoricoDb;
 import modelos.objetos.HechoHistorico;
 
 /**
- *
+ * Clase destinada a el manejo del frame con el formulario para crear un nuevo evento historico
  * @author sergio
  */
 public class AgregarEvento extends javax.swing.JFrame {
 private LineaDeTiempo linea;
     /**
-     * Creates new form AgregarEvento
+     * Constructor, creates new form AgregarEvento
      */
     public AgregarEvento() {
         initComponents();
     }
-        public void setLinea(LineaDeTiempo linea) {
+    
+    /**
+     * Procedimiento para saber la instancia de linea de tiempo que activo este frame
+     * @param linea 
+     */
+    public void setLinea(LineaDeTiempo linea) {
         this.linea = linea;
     }
     
-    
+    /**
+     * Actualiza el listado de hechos que posee la linea de tiempo padre de esta instancia
+     */
     public void actualizarHechos(){
         linea.obtenerHechos();
     }

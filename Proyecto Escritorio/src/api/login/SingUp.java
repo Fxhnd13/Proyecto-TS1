@@ -19,7 +19,7 @@ import modelos.objetos.Rol;
 import modelos.objetos.Usuario;
 
 /**
- *
+ * Clase destinada al manejo del registro de nuevos usuarios de la aplicación
  * @author LENOVO-PC
  */
 public class SingUp extends javax.swing.JFrame {
@@ -29,6 +29,10 @@ public class SingUp extends javax.swing.JFrame {
     private LinkedList<Rol> listaRoles = new LinkedList<>();
     private UsuarioDb usuarioDb = new UsuarioDb();
     
+    /**
+     * Constructor
+     * @param login Login activo antes de abrir esta ventana
+     */
     public SingUp(Login login) {
         this.login = login;
         this.setContentPane(fondoPanel);
@@ -63,7 +67,10 @@ public class SingUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Todos los campos deben de ser LLenados\n(Todos los campos son obligatorios)*");
         }
     }
-    //limpia cada uno de los campos
+    
+    /**
+     * Procedimiento que 'limpia' los campos del formulario para un posterior uso
+     */
     public void limpiar(){
         textFieldNombre.setText("");
         textFieldApellido.setText("");

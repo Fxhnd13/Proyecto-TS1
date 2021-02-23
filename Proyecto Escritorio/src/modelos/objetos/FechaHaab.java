@@ -8,7 +8,7 @@ package modelos.objetos;
 import java.sql.Date;
 
 /**
- *
+ * Clase destinada a almacenar la información de una fecha del calendario haab
  * @author jose_
  */
 public class FechaHaab {
@@ -20,9 +20,22 @@ public class FechaHaab {
     private Date fecha;
     private Cargador cargador;
 
+    /**
+     * Constructor
+     */
     public FechaHaab() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador de la fecha del calendario haab
+     * @param nahual Nahual de la fecha del calendario haab
+     * @param winal Winal de la fecha del calendario haab
+     * @param nombre Nombre de la fecha del calendario haab (si tiene)
+     * @param descripcion Descripcion de la fecha del calendario haab (si tiene)
+     * @param fecha Fecha a la que corresponde del calendario haab
+     * @param cargador Cargador de la fecha actual del calendario haab
+     */
     public FechaHaab(int id, Nahual nahual, Winal winal, String nombre, String descripcion, Date fecha, Cargador cargador) {
         this.id = id;
         this.nahual = nahual;

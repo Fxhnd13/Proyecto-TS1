@@ -15,13 +15,18 @@ import modelos.objetos.Cargador;
 import modelos.objetos.Usuario;
 
 /**
- *
+ * Clase destinada a la consulta del inicio de sesión
  * @author luisGonzalez
  */
 public class Informacion {
     
     private static String CONSULTA_PERFIL = "SELECT * FROM usuario WHERE username = ?";
     
+    /**
+     * Funcion destinada a la consulta de un usuario
+     * @param nombre username con el cual se buscará la información del usuario
+     * @return Instancia Usuario
+     */
     public Usuario buscarDatos(String nombre){
         Usuario user = new Usuario();
         try {

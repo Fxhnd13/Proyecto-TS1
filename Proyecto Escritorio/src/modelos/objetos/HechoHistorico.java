@@ -8,7 +8,7 @@ package modelos.objetos;
 import java.sql.Date;
 
 /**
- *
+ * Clase que almacena la información de un hecho historico
  * @author jose_
  */
 public class HechoHistorico {
@@ -17,9 +17,20 @@ public class HechoHistorico {
     private Date fechaInicio, fechaFinalizacion;
     private String titulo, descripcion;
 
+    /**
+     * Constructor
+     */
     public HechoHistorico() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador del hecho historico
+     * @param fechaInicio Fecha en la que inicia el hecho historico
+     * @param fechaFinalizacion Fecha en la que finaliza el hecho historico
+     * @param titulo Titulo del hecho historico
+     * @param descripcion Descripcion del hecho historico
+     */
     public HechoHistorico(int id, Date fechaInicio, Date fechaFinalizacion, String titulo, String descripcion) {
         this.id = id;
         this.fechaInicio = fechaInicio;

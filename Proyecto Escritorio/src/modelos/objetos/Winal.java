@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- *
+ * Clase destinada a almacenar la información de un Winal
  * @author jose_
  */
 public class Winal {
@@ -20,9 +20,19 @@ public class Winal {
     private String nombre, descripcion;
     private Imagen imagen;
 
+    /**
+     * Constructor
+     */
     public Winal() {
     }
 
+    /**
+     * Constructor
+     * @param id Identificador del winal
+     * @param nombre Nombre del winal 
+     * @param descripcion Descripcion del winal
+     * @param imagen Imagen del winal
+     */
     public Winal(int id, String nombre, String descripcion, Imagen imagen) {
         this.id = id;
         this.nombre = nombre;

@@ -25,6 +25,10 @@ import modelos.database.NahualDb;
 import modelos.objetos.Nahual;
 import principal.backend.calendari_cholquij.calcular_fecha.CalcularFecha;
 
+/**
+ * Clase destinada al manejo del frame de informacion de los nahuales
+ * @author jose_
+ */
 public class VentanaInfoNahuales extends javax.swing.JFrame {
     
     //ManejadorNahualGUI manejadorNahualGUI = new ManejadorNahualGUI();
@@ -38,6 +42,9 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
     
     private FondoPanel fondoPanel = new FondoPanel();
     
+    /**
+     * Constructor
+     */
     public VentanaInfoNahuales() {
         this.setContentPane(fondoPanel);
         initComponents();
@@ -67,6 +74,10 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         listaNahuales = (ArrayList<Nahual>) nahualDb.getNahuales();
         pintar();
     }
+    
+    /**
+     * Carga el panel de nuevo, al haber actualizaciones
+     */
     public void setPosiciones(){
         
 //        textPaneSig.setBounds(labelSignificado.getX(), labelSignificado.getHeight()+labelSignificado.getY()+2, panelInfo.getWidth()-100, calcularFilas(textPaneSig.getText())*25);
@@ -93,6 +104,11 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         return false;
     }
     
+    /**
+     * Funcion que calcula la cantidad de filas que necesitamos para mostrar toda la información del nahual respectivo
+     * @param texto Cadena de texto que deseamos mostrar
+     * @return Entero con la cantidad de filas
+     */
     public int calcularFilas(String texto){
         int total = (int) texto.length()/143;
         if(total>0){
@@ -109,6 +125,9 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         return icono;
     }
     
+    /**
+     * Procedimiento que actualiza las imagenes del frame cada que se selecciona un nahual distinto
+     */
     public void pintarNahuales(){
         if(indice == 0){
             labalIzquierda.setIcon(getIconNahual(listaNahuales.get(listaNahuales.size()-1), labalIzquierda));
@@ -147,7 +166,11 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
             indice++;
     }
     
-    
+    /**
+     * Funcion para saber la cantidad de nahuales que quedan al avanzar hacia adelante
+     * @param cont contador del nahual activo
+     * @return el indice del nahual que se encuentra activo
+     */
     public int nahual(int cont){
         //System.out.println("Contador " + cont);
         int contador = cont;
@@ -179,6 +202,11 @@ public class VentanaInfoNahuales extends javax.swing.JFrame {
         setPosiciones();
     }
     
+    /**
+     * Metodo que retorna la cantidad de días a partir de cierto momento para determinar el nahual correspondiente
+     * @param date fecha de la que queremos saber el nahual
+     * @return Identificador del nahual correspondiente
+     */
     public int timeCholqij(long date){
         try {
             String string = "Nov 15, 2020 00:00:00 AM";

@@ -10,7 +10,7 @@ import principal.backend.manejadores.ManejadorInformacion;
 import principal.frontend.gui.calendari_cholquij.matriz.matrizCholquijFrame;
 
 /**
- *
+ * Frame que muestra las funcionalidades del calendario cholqij
  * @author bryangmz
  */
 public class FrameCalendario extends javax.swing.JFrame {
@@ -145,12 +145,20 @@ public class FrameCalendario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Procedimiento para mostrar el frame de la funcionalidad para calcular fecha del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnCalendarioCalcularFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalendarioCalcularFechaActionPerformed
         // TODO add your handling code here:
         CalcularFecha calcularFecha = new CalcularFecha(this, true);
         calcularFecha.setVisible(true);
     }//GEN-LAST:event_btnCalendarioCalcularFechaActionPerformed
 
+    /**
+     * Procedimiento que muestra en pantalla el frame de la funcionalidad de matriz del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnMatrizCalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMatrizCalendarioActionPerformed
         // TODO add your handling code here:
         if (frame == null) {
@@ -159,27 +167,47 @@ public class FrameCalendario extends javax.swing.JFrame {
         frame.setVisible(true);
     }//GEN-LAST:event_btnMatrizCalendarioActionPerformed
 
+    /**
+     * Procedimiento que muestra en pantalla el frame sobre informacion del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnNahualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNahualActionPerformed
         // TODO add your handling code here:
         CholqijFrame cholqijFrame = new CholqijFrame();
         cholqijFrame.setVisible(true);
     }//GEN-LAST:event_btnNahualActionPerformed
 
+    /**
+     * Procedimiento que muestra un mensaje con la información del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnInfCalendarioCholquijActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfCalendarioCholquijActionPerformed
         // TODO add your handling code here:
          manejadorInformacion.mostrarInfCholquij();
     }//GEN-LAST:event_btnInfCalendarioCholquijActionPerformed
 
+    /**
+     * Procedimiento que muestra un mensaje con la informacion de las formas de contar del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnFormasDeContarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFormasDeContarActionPerformed
         // TODO add your handling code here:
          manejadorInformacion.mostarInfFormasDeContar();
     }//GEN-LAST:event_btnFormasDeContarActionPerformed
 
+    /**
+     * Procedimiento que muestra un mensaje con la información del calendario lunar 
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnCalendarioLunarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalendarioLunarActionPerformed
         // TODO add your handling code here:
          manejadorInformacion.mostrarInfCalendarioLunar();
     }//GEN-LAST:event_btnCalendarioLunarActionPerformed
 
+    /**
+     * Procedimiento que muestra la información de los dias del calendario cholqij
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void btnDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiasActionPerformed
         // TODO add your handling code here:
          manejadorInformacion.mostrarInfDiasCholquij();

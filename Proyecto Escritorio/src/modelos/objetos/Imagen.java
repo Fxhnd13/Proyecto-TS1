@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- *
+ * Clase destinada a almacenar la informacion de las rutas de una imagen
  * @author jose_
  */
 public class Imagen {
@@ -19,6 +19,13 @@ public class Imagen {
     private int id;
     private String dirWeb, dirEscritorio, categoria;
 
+    /**
+     * Constructor
+     * @param id Identificador de la Imagen
+     * @param dirWeb Ruta en la que se encuentra la imagen para la versión web
+     * @param dirEscritorio Ruta en la que se encentra la imagen para la versión de escritorio 
+     * @param categoria Categoria en la que se encuentra la imagen
+     */
     public Imagen(int id, String dirWeb, String dirEscritorio, String categoria) {
         this.id = id;
         this.dirWeb = dirWeb;
@@ -26,6 +33,9 @@ public class Imagen {
         this.categoria = categoria;
     }
 
+    /**
+     * Constructor
+     */
     public Imagen() {
     }
 

@@ -11,11 +11,13 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import modelos.database.UsuarioDb;
+import modelos.database.Utilidades;
 import modelos.objetos.Usuario;
 import principal.backend.perfil_usuario.Informacion;
+import principal.menu.MenuPrincipal;
 
 /**
- *
+ * Clase destinada al manejo del frame para editar los datos de la sesion activa
  * @author luisGonzalez
  */
 public class FramePerfil extends javax.swing.JDialog {
@@ -23,11 +25,12 @@ public class FramePerfil extends javax.swing.JDialog {
     private FondoPanel fondo = new FondoPanel();
     private Informacion info = new Informacion();
     private Usuario user;
+    private MenuPrincipal parent;
     
     /**
-     * Creates new form FramePerfil
+     * Constructor, creates new form FramePerfil
      */
-    public FramePerfil(java.awt.Frame parent, boolean modal, Usuario user) {
+    public FramePerfil(MenuPrincipal parent, boolean modal, Usuario user) {
         super(parent, modal);
         this.setContentPane(fondo);
         initComponents();
@@ -38,7 +41,7 @@ public class FramePerfil extends javax.swing.JDialog {
         textEmail.setText(user.getEmail());
         textNombres.setText(user.getNombre());
         textApellidos.setText(user.getApellido());
-        if(user.getNacimiento() != null) textNacimiento.setText(user.getNacimiento().toString());
+        nacimiento.setDate(user.getNacimiento());
         textTelefono.setText(user.getTelefono());
         textUsuario.setText(user.getUsername());
     }
@@ -61,16 +64,15 @@ public class FramePerfil extends javax.swing.JDialog {
         textEmail = new javax.swing.JTextField();
         textNombres = new javax.swing.JTextField();
         textApellidos = new javax.swing.JTextField();
-        textNacimiento = new javax.swing.JTextField();
         textTelefono = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         lbl6 = new javax.swing.JLabel();
         textUsuario = new javax.swing.JTextField();
+        nacimiento = new com.toedter.calendar.JDateChooser();
         panel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(410, 525));
         setSize(new java.awt.Dimension(410, 525));
 
         lbl1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -94,8 +96,6 @@ public class FramePerfil extends javax.swing.JDialog {
 
         textApellidos.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
-        textNacimiento.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-
         textTelefono.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
@@ -118,10 +118,10 @@ public class FramePerfil extends javax.swing.JDialog {
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                        .addComponent(lbl6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl6, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(textUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
@@ -132,13 +132,13 @@ public class FramePerfil extends javax.swing.JDialog {
                             .addComponent(lbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1)
-                            .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(textNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(textApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(textTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(nacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         panel2Layout.setVerticalGroup(
@@ -161,9 +161,9 @@ public class FramePerfil extends javax.swing.JDialog {
                     .addComponent(lbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,6 +219,10 @@ public class FramePerfil extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Procedimiento que modifica la informacion del usuario activo por la ingresada en el frame
+     * @param evt evento que ejecuta el procedimiento
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         UsuarioDb acceso = new UsuarioDb();
         String usuarioAntiguo = user.getUsername();
@@ -227,9 +231,14 @@ public class FramePerfil extends javax.swing.JDialog {
         this.user.setEmail(textEmail.getText());
         this.user.setTelefono(textTelefono.getText());
         this.user.setUsername(textUsuario.getText());
+        this.user.setNacimiento(Utilidades.JavaDateToSqlDate(nacimiento.getDate()));
         acceso.actualizarUsuario(user, usuarioAntiguo);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Procedimiento para cambiar el fondo del frame
+     */
     class FondoPanel extends JPanel {
         
         private Image imagen;
@@ -254,11 +263,11 @@ public class FramePerfil extends javax.swing.JDialog {
     private javax.swing.JLabel lbl4;
     private javax.swing.JLabel lbl5;
     private javax.swing.JLabel lbl6;
+    private com.toedter.calendar.JDateChooser nacimiento;
     private javax.swing.JPanel panel1;
     private javax.swing.JPanel panel2;
     private javax.swing.JTextField textApellidos;
     private javax.swing.JTextField textEmail;
-    private javax.swing.JTextField textNacimiento;
     private javax.swing.JTextField textNombres;
     private javax.swing.JTextField textTelefono;
     private javax.swing.JTextField textUsuario;

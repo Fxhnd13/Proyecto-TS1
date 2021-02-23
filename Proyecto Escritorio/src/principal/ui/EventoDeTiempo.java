@@ -8,19 +8,23 @@ package principal.ui;
 import modelos.objetos.HechoHistorico;
 
 /**
- *
+ * Clase destinada a manejar la información de un hecho historico especifico, mediante un panel
  * @author sergio
  */
 public class EventoDeTiempo extends javax.swing.JPanel {
     
     private HechoHistorico hechoHistorico;
     /**
-     * Creates new form EventoDeTiempo
+     * Constructor, creates new form EventoDeTiempo
      */
     public EventoDeTiempo() {
         initComponents();
     }
 
+    /**
+     * Constructor
+     * @param hechoHistorico hecho historico que debe representarse en la instancia del panel
+     */
     public EventoDeTiempo(HechoHistorico hechoHistorico) {
          initComponents();
         this.hechoHistorico = hechoHistorico;

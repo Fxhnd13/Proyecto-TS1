@@ -6,7 +6,7 @@
 package modelos.objetos;
 
 /**
- *
+ * Clase que almacena la informacion de un rol
  * @author jose_
  */
 public class Rol {
@@ -14,11 +14,19 @@ public class Rol {
     private int id;
     private String tipo;
 
+    /**
+     * Constructor
+     * @param id Identificador de un rol
+     * @param tipo Nombre del rol 
+     */
     public Rol(int id, String tipo) {
         this.id = id;
         this.tipo = tipo;
     }
 
+    /**
+     * Constructor
+     */
     public Rol() {
     }
 
