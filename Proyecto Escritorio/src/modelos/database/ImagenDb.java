@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import modelos.objetos.Imagen;
 
 /**
- *
+ *  Clase destinada al manejo de la conexion con la base de datos para CRUD de imagenes
  * @author jose_
  */
 public class ImagenDb {
@@ -20,6 +20,11 @@ public class ImagenDb {
     public void modificar(Imagen imagen){}
     public void eliminar(int id){}
     
+    /**
+     * Obtiene las rutas de imagen de la base de datos según un identificador
+     * @param id Identificador para cargar la imagen
+     * @return Imagen (null si no existe)
+     */
     public Imagen getImagen(int id){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM rutaImagen WHERE id=?;");

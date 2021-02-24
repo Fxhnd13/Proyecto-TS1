@@ -13,14 +13,18 @@ import javax.swing.JOptionPane;
 import modelos.objetos.HechoHistorico;
 
 /**
- *
+ *  Clase destinada al manejo de la conexion con la base de datos para CRUD de un hecho historico
  * @author jose_
  */
 public class HechoHistoricoDb {
     
     private Mensaje mensajes = new Mensaje();
     
-     public void crearHH(HechoHistorico hhACrear) {//creamos un nuevo hecho historico
+    /**
+     * Crea un nuevo hecho historico
+     * @param hhACrear Hecho historico que desamos crear
+     */
+    public void crearHH(HechoHistorico hhACrear) {//creamos un nuevo hecho historico
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO hechohistorico "
                     + "(id, fechaInicio,fechaFinalizacion, titulo, descripcion) "
@@ -37,6 +41,10 @@ public class HechoHistoricoDb {
         }
     }
 
+    /**
+     * Modifica la informacion de un hecho historico existente en la base de datos
+     * @param hhActualizar hecho historico que deseamos modificar
+     */
     public void actualizarHechoHistorico(HechoHistorico hhActualizar) {//actualizamos hecho historico
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE hechohistorico SET "
@@ -56,6 +64,10 @@ public class HechoHistoricoDb {
 
     }
 
+    /**
+     * Elimina un hecho historico exitente en la base de datos
+     * @param hhAEliminar Hecho historico que deseamos eliminar
+     */
     public void eliminarHechoHistorico(HechoHistorico hhAEliminar) {//eliminamos hecho historico
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM hechohistorico WHERE id=?;");
@@ -67,6 +79,10 @@ public class HechoHistoricoDb {
         }
     }
 
+    /**
+     * Listado de los hecho historicos existentes en la base de datos
+     * @return Listado de hechos historicos
+     */
     public LinkedList<HechoHistorico> leerHechosHistoricos() { //mostramos todos los hechos historicos y devolvemos en una lista
         LinkedList<HechoHistorico> listaHechosHistoricos = new LinkedList<>();
         try {
@@ -98,8 +114,8 @@ public class HechoHistoricoDb {
         }
         return hh;
     }
-
-    public HechoHistorico convertirAHH(ResultSet resultado) {//del resultado de la busqueda obtener el hechohistorico
+    
+    private HechoHistorico convertirAHH(ResultSet resultado) {//del resultado de la busqueda obtener el hechohistorico
         HechoHistorico hhDevolver = null;
         try {
             hhDevolver = new  HechoHistorico(resultado.getInt(1), resultado.getDate(2),resultado.getDate(3),

@@ -12,13 +12,17 @@ import javax.swing.JOptionPane;
 import modelos.objetos.Categoria;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Categoria
  * @author jose_
  */
 public class CategoriaDb {
     
     private Mensaje mensajes = new Mensaje();
     
+    /**
+     * Crea una categoria
+     * @param categoriaACrear Categoria que se desea guardar en la base de datos
+     */
     public void crearCategoria(Categoria categoriaACrear) {//creamos una nueva categoria
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO categoria "
@@ -32,6 +36,10 @@ public class CategoriaDb {
         }
     }
 
+    /**
+     * Modifica los datos de una categoria
+     * @param categoriaActualizar Categoria que deseamos modificar
+     */
     public void actualizarCategoria(Categoria categoriaActualizar) {//actualizamos categoria
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE categoria SET "
@@ -46,6 +54,10 @@ public class CategoriaDb {
 
     }
 
+    /**
+     * Elimina una categoria
+     * @param categoriaEliminar Categoria que deseamos eliminar
+     */
     public void eliminarCategoria(Categoria categoriaEliminar) {//eliminamos categoria
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM categoria WHERE id=?;");
@@ -57,6 +69,10 @@ public class CategoriaDb {
         }
     }
 
+    /**
+     * Carga todas las categorias existentes de la base de datos
+     * @return Un lisatdo de todas las categorias halladas
+     */
     public LinkedList<Categoria> leerCategorias() { //mostramos todas las categorias  y devolvemos en una lista
         LinkedList<Categoria> listaCategorias = new LinkedList<>();
         try {
@@ -72,6 +88,11 @@ public class CategoriaDb {
         return listaCategorias;
     }
 
+    /**
+     * Carga una categoria por el identificador de la misma
+     * @param rolABuscar Identificador de la categoria a buscar
+     * @return Categoria hallada
+     */
     public Categoria leerCategoria(Categoria rolABuscar) {//leemos una categoria en especifico y lo devolvemos
         Categoria rolUsuario = null;
 
@@ -88,8 +109,8 @@ public class CategoriaDb {
         }
         return rolUsuario;
     }
-
-    public Categoria convertirACategoria(ResultSet resultado) {
+    
+    private Categoria convertirACategoria(ResultSet resultado) {
         Categoria rolDevolver = null;
         try {
             rolDevolver = new Categoria(resultado.getInt(1), resultado.getString("nombre"));

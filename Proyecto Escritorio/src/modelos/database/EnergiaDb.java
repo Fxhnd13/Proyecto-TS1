@@ -13,11 +13,15 @@ import java.util.List;
 import modelos.objetos.Energia;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Energias
  * @author jose_
  */
 public class EnergiaDb {
 
+    /**
+     * Crea una nueva energia en la base de datos
+     * @param energia Energia que deseamos almacenar
+     */
     public void crear(Energia energia){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO energia "
@@ -30,6 +34,10 @@ public class EnergiaDb {
         }
     }
     
+    /**
+     * Modifica una energia existente de la base de datos
+     * @param energia Energia que deseamos modificar
+     */
     public void modificar(Energia energia){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE energia SET "
@@ -43,6 +51,10 @@ public class EnergiaDb {
         }
     }
     
+    /**
+     * Elimina una energia existente de la base de datos
+     * @param energia Energia que deseamos eliminar
+     */
     public void eliminar (Energia energia){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM energia WHERE id=?;");
@@ -53,6 +65,10 @@ public class EnergiaDb {
         }
     }
     
+    /**
+     * Lista todas las energias existentes en la base de datos
+     * @return Listado de energias
+     */
     public List<Energia> getEnergias(){
         List<Energia> energias = new ArrayList();
         try {
@@ -65,6 +81,11 @@ public class EnergiaDb {
         return energias;
     }
     
+    /**
+     * Busca una energia por su identificador
+     * @param id Identificador para buscar la energía
+     * @return Energia hallada (null si no existe)
+     */
     public Energia getEnergia(int id) {
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM energia WHERE id=?;");

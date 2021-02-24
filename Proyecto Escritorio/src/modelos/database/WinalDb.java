@@ -13,11 +13,15 @@ import java.util.List;
 import modelos.objetos.Winal;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de un Winal
  * @author jose_
  */
 public class WinalDb {
 
+    /**
+     * Crea un nuevo winal en la base de datos
+     * @param winal Winal que deseamos crear
+     */
     public void crear(Winal winal){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO winal "
@@ -31,6 +35,10 @@ public class WinalDb {
         }
     }
     
+    /**
+     * Modifica la inforamcion de un winal existente en la base de datos
+     * @param winal Winal que deseamos modificar
+     */
     public void modificar(Winal winal){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE winal "
@@ -45,6 +53,10 @@ public class WinalDb {
         }
     }
     
+    /**
+     * Elimina la información de un winal existente en la base de datos
+     * @param winal Winal que deseamos eliminar
+     */
     public void eliminar(Winal winal){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM winal WHERE id=?;");
@@ -55,6 +67,11 @@ public class WinalDb {
         }
     }
     
+    /**
+     * Busca un winal especifico en la base de datos según el identificador deseado
+     * @param id Identificador para hacer la busqueda del winal
+     * @return Winal hallado (null si no existe)
+     */
     public Winal getWinal(int id) {
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM winal WHERE id=?;");
@@ -67,6 +84,10 @@ public class WinalDb {
         return null;
     }
     
+    /**
+     * Lista todos los winales existentes en la base de datos
+     * @return Listado de winales
+     */
     public List<Winal> getWinales(){
         List<Winal> winales = new ArrayList();
         try {

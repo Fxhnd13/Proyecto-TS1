@@ -13,11 +13,15 @@ import java.util.List;
 import modelos.objetos.Nahual;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Nahuales
  * @author jose_
  */
 public class NahualDb {
     
+    /**
+     * Crea un nahual en la base de datos
+     * @param nahual Nahual que deseamos almacenar
+     */
     public void crear(Nahual nahual){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO nahual "
@@ -36,6 +40,10 @@ public class NahualDb {
         }
     }
     
+    /**
+     * Modifica la informacion de un nahual existente en la base de datos
+     * @param nahual Nahual que deseamos modificar
+     */
     public void modificar(Nahual nahual){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE nahual SET "
@@ -55,6 +63,10 @@ public class NahualDb {
         }
     }
     
+    /**
+     * Elimina un nahual existente en la base de datos
+     * @param nahual Nahual que deseamos eliminar
+     */
     public void eliminar(Nahual nahual){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM nahual WHERE id=?;");
@@ -65,6 +77,10 @@ public class NahualDb {
         }
     }
     
+    /**
+     * Lista a todos los nahuales existentes en la base de datos
+     * @return Listado de nanuales
+     */
     public List<Nahual> getNahuales(){
         List<Nahual> nahuales = new ArrayList();
         try {
@@ -77,6 +93,11 @@ public class NahualDb {
         return nahuales;
     }
     
+    /**
+     * Busca un nahual según un identificador asignado
+     * @param id identificador para buscar un nahual
+     * @return Nahual hallado (null si no existe)
+     */
     public Nahual getNahual(int id){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM nahual WHERE id=?;");

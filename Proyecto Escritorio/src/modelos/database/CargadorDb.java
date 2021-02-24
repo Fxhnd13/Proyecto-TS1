@@ -13,12 +13,16 @@ import java.util.List;
 import modelos.objetos.Cargador;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de cargador
  * @author jose_
  */
 
 public class CargadorDb {
     
+    /**
+     * Crea un cargador en la base de datos
+     * @param cargador cargador a crear
+     */
     public void crear(Cargador cargador){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO cargador "
@@ -32,6 +36,10 @@ public class CargadorDb {
         }
     }
     
+    /**
+     * Modifica un cargador en la base de datos
+     * @param cargador cargador a modificar
+     */
     public void modificar(Cargador cargador){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE cargador SET "
@@ -45,6 +53,10 @@ public class CargadorDb {
         }
     }
     
+    /**
+     * Elimina un cargador de la base de datos
+     * @param cargador cargador a eliminar
+     */
     public void eliminar(Cargador cargador){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM cargador WHERE nombre=?");
@@ -55,6 +67,10 @@ public class CargadorDb {
         }
     }
     
+    /**
+     * Lista todos los cargadores existentes
+     * @return Cargadores
+     */
     public List<Cargador> getCargadores(){
         List<Cargador> cargadores = new ArrayList();
         try {
@@ -67,6 +83,11 @@ public class CargadorDb {
         return cargadores;
     }
     
+    /**
+     * Carga un cargador con el nombre especificado
+     * @param nombre Nombre para buscar el cargador
+     * @return Cargador hallado
+     */
     public Cargador getCargador(String nombre){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM cargador WHERE nombre=?;");
@@ -79,6 +100,11 @@ public class CargadorDb {
         return null;
     }
     
+    /**
+     * Carga un cargador con el identificador especificado
+     * @param id Identificador para buscar al cargador
+     * @return Cargador hallado
+     */
     public Cargador getCargador(int id){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM cargador WHERE id=?;");

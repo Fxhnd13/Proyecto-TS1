@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos
  * @author jose_
  */
 public class ConexionDb {//Aquí la conexion a la base de datos
@@ -22,7 +22,9 @@ public class ConexionDb {//Aquí la conexion a la base de datos
     final static String usuario = "root";
     final static String password = "josecarlos";
 
-    //Nos conectamos a nuestra db
+    /**
+     * Procedimiento estatico para cargar la conexion con la base de datos
+     */
     public static  Connection obtenerConexion() throws SQLException, ClassNotFoundException {
         if (conexion == null) {
             try {
@@ -42,7 +44,9 @@ public class ConexionDb {//Aquí la conexion a la base de datos
         return conexion;
     }
 
-    //cerramos conexion , liberamos nuestra DB 
+    /**
+     * Procedimiento para cerrar el flujo de informacion con la base de datos
+     */
     public static void cerrar() throws SQLException {
         if (conexion != null) {
             conexion.close();

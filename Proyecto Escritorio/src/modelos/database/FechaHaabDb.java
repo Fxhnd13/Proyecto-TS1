@@ -15,11 +15,15 @@ import java.util.List;
 import modelos.objetos.FechaHaab;
 
 /**
- *
+ *  Clase destinada al manejo de la conexion con la base de datos para CRUD de una fecha Haab
  * @author jose_
  */
 public class FechaHaabDb {
     
+    /**
+     * Crea una nueva fecha de calendario haab en la base de datos
+     * @param fecha Fecha que deseamos crear
+     */
     public void crear(FechaHaab fecha){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO calendariohaab "
@@ -35,6 +39,10 @@ public class FechaHaabDb {
         }
     }
     
+    /**
+     * Modifica una fecha de calendario haab existente en la base de datos
+     * @param fecha Fecha que deseamos modificar
+     */
     public void modificar(FechaHaab fecha){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE calendariohaab"
@@ -51,6 +59,10 @@ public class FechaHaabDb {
         }
     }
     
+    /**
+     * Elimina una fecha de calendio haab existente en la base de datos
+     * @param fecha Fecha que desaemos eliminar
+     */
     public void eliminar(FechaHaab fecha){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM calendariohaab WHERE id=?;");
@@ -61,6 +73,10 @@ public class FechaHaabDb {
         }
     }
     
+    /**
+     * Lista todas las fechas de calendario haab que existen en la base de datos
+     * @return Listado de fechas de calendario haab
+     */
     public List<FechaHaab> getFechas(){
         List<FechaHaab> fechas = new ArrayList();
         try {
@@ -73,6 +89,11 @@ public class FechaHaabDb {
         return fechas;
     }
     
+    /**
+     * Busca una fecha de calendario haab especifica
+     * @param id Identificador para buscar la fecha 
+     * @return Fecha de calendario haab hallada (null si no existe)
+     */
     public FechaHaab getFecha(int id){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM calendariohaab WHERE id=?;");
@@ -85,6 +106,11 @@ public class FechaHaabDb {
         return null;
     }
 
+    /**
+     * Retorna la fecha de calendario haab correspondiente al LocalDate enviado de parametro
+     * @param fecha Fecha que deseamos encontrar
+     * @return FechaHaab hallada (null si no existe)
+     */
     public FechaHaab getFechaEspecifica(LocalDate fecha) {
         try {
             int cargador = obtenerCargador(fecha);

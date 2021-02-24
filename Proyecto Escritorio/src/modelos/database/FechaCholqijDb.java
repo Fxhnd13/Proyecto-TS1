@@ -13,11 +13,15 @@ import java.util.List;
 import modelos.objetos.FechaCholqij;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de una fecha cholqij
  * @author jose_
  */
 public class FechaCholqijDb {
 
+    /**
+     * Crea una nueva fecha de calendario cholqij
+     * @param fecha Fecha a crear
+     */
     public void crear(FechaCholqij fecha){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO calendariocholqij "
@@ -32,6 +36,10 @@ public class FechaCholqijDb {
         }
     }
     
+    /**
+     * Modifica una fecha de calendario cholqij existente en la base de datos
+     * @param fecha Fecha a modificar
+     */
     public void modificar(FechaCholqij fecha){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE calendariocholqij "
@@ -47,6 +55,10 @@ public class FechaCholqijDb {
         }
     }
     
+    /**
+     * Elimina una fecha de calendario cholqij de la base de datos
+     * @param fecha Fecha que deseamos eliminar
+     */
     public void eliminar(FechaCholqij fecha){
         try{
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM calendariocholqij WHERE id=?;");
@@ -57,6 +69,11 @@ public class FechaCholqijDb {
         }
     }
     
+    /**
+     * Busca una fecha de calendario cholqij especifica en base a su identificador
+     * @param id Identificador de la fecha que buscamos
+     * @return Fecha cholqij hallada (null si no existe)
+     */
     public FechaCholqij getFecha(int id) {
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM calendariocholqij WHERE id=?;");
@@ -69,6 +86,10 @@ public class FechaCholqijDb {
         return null;
     }
     
+    /**
+     * Lista todas las fechas cholqij existentes en la base de datos
+     * @return Listado de fechas cholqij
+     */
     public List<FechaCholqij> getFechas(){
         List<FechaCholqij> fechas = new ArrayList();
         try {

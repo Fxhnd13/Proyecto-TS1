@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import modelos.objetos.Usuario;
 
 /**
- *
+ *  Clase destinada al manejo de la conexion con la base de datos para CRUD de Usuarios
  * @author jose_
  */
 public class UsuarioDb {
@@ -23,6 +23,10 @@ public class UsuarioDb {
     public static String VALIDACION_LOGEO = "SELECT * FROM usuario WHERE email = ? AND password = ?";
     private Mensaje mensajes = new Mensaje();
     
+    /**
+     * Crea un usuario nuevo en la base de datos
+     * @param usuarioACrear Usuario a crear
+     */
     public void crearUsuario(Usuario usuarioACrear) {//creamos un nuevo usuario
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO usuario "
@@ -43,6 +47,11 @@ public class UsuarioDb {
         }
     }
 
+    /**
+     * Modifica la informacion de un usaurio existente en la base de datos
+     * @param usuarioActualizar usuario a actualizar
+     * @param userNameAntiguo username del usuario antes del cambio (dado el caso de haber realizado un cambio de username)
+     */
     public void actualizarUsuario(Usuario usuarioActualizar, String userNameAntiguo) {//actualizamos usuario
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE usuario SET "
@@ -68,6 +77,10 @@ public class UsuarioDb {
 
     }
 
+    /**
+     * Elimina un usuario existente de la base de datos
+     * @param usuarioAEliminar usuario que deseamos eliminar
+     */
     public void eliminarUsuario(Usuario usuarioAEliminar) {//eliminamos usuario
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM usuario WHERE username=?;");
@@ -79,6 +92,10 @@ public class UsuarioDb {
         }
     }
 
+    /**
+     * Lista todos los usuarios registrados en el sistema de base de datos
+     * @return Listado de usuarios
+     */
     public LinkedList<Usuario> leerUsuarios() { //mostramos todos los usuarios y devolvemos en una lista
         LinkedList<Usuario> listaUsuarios = new LinkedList<>();
         try {
@@ -94,6 +111,11 @@ public class UsuarioDb {
         return listaUsuarios;
     }
 
+    /**
+     * Busca un usuario en especifico para verificar su existencia
+     * @param usuarioABuscar Usuario a buscar
+     * @return Usuario hallado (null si no existe)
+     */
     public Usuario leerUsuario(Usuario usuarioABuscar) {//leemos un usuario en especifico y lo devolvemos
         Usuario usuario = null;
 
@@ -110,8 +132,8 @@ public class UsuarioDb {
         }
         return usuario;
     }
-
-    public Usuario convertirAUsuario(ResultSet resultado) {//del resultado de la busqueda obtener el usuario
+    
+    private Usuario convertirAUsuario(ResultSet resultado) {//del resultado de la busqueda obtener el usuario
         Usuario usuarioDevolver = null;
         try {
             usuarioDevolver = new Usuario(resultado.getString(1), resultado.getString(2), resultado.getString(3), 
@@ -123,7 +145,12 @@ public class UsuarioDb {
         return usuarioDevolver;
     }
     
-    //Verificacion durante logeo de un usuario
+    /**
+     * Verifica que exista un usuario existente con las credenciales ingresadas para hacer un inicio de sesion en el sistema
+     * @param correo Correo del usuario
+     * @param password Contraseña del usuario
+     * @return Usuario logeado (null si no coincide o si no existe)
+     */
     public Usuario validacionUsuario(String correo, String password){
         Usuario aDevolver = null;
         try {

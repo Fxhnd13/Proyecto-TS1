@@ -13,11 +13,15 @@ import modelos.objetos.Rol;
 
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de roles
  * @author jose_
  */
 public class RolDb {
     
+    /**
+     * Crea un nuevo rol en la base de datos
+     * @param rolACrear Rol a almacenar
+     */
     public void crearRol(Rol rolACrear) {//creamos un nuevo rol
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO rol "
@@ -30,6 +34,10 @@ public class RolDb {
         }
     }
 
+    /**
+     * Modifica un rol existente en la base de datos
+     * @param rolActualizar Rol a modificar
+     */
     public void actualizarRol(Rol rolActualizar) {//actualizamos rol
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE rol SET "
@@ -43,6 +51,10 @@ public class RolDb {
 
     }
 
+    /**
+     * Elimina un rol de la base de datos
+     * @param rolAEliminar Rol a eliminar
+     */
     public void eliminarRol(Rol rolAEliminar) {//eliminamos rol
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM rol WHERE id=?;");
@@ -53,6 +65,10 @@ public class RolDb {
         }
     }
 
+    /**
+     * Lista a todos los roles existentes en la base de datos
+     * @return Listado de roles
+     */
     public LinkedList<Rol> leerRoles() { //mostramos todos los roles y devolvemos en una lista
         LinkedList<Rol> listaRoles = new LinkedList<>();
         try {
@@ -68,6 +84,11 @@ public class RolDb {
         return listaRoles;
     }
 
+    /**
+     * Busca un rol en especifico para verificar su existencia
+     * @param rolABuscar Rol a buscar
+     * @return Rol hallado (null si no existe)
+     */
     public Rol leerRol(Rol rolABuscar) {//leemos un rol en especifico y lo devolvemos
         Rol rolUsuario = null;
 

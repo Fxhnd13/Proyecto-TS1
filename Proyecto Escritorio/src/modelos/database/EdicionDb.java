@@ -13,11 +13,15 @@ import javax.swing.JOptionPane;
 import modelos.objetos.Edicion;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Ediciones
  * @author jose_
  */
 public class EdicionDb {
     
+    /**
+     * Crea una nueva edicion en la base de datos
+     * @param edicionCrear Edicion que deseamos almacenar en la base de datos
+     */
     public void crearEdicion(Edicion edicionCrear) {//agregamos edicion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO edicion "
@@ -34,6 +38,10 @@ public class EdicionDb {
         }
     }
 
+    /**
+     * Modifica una edicion existente en la base de datos
+     * @param edicionActualizar Edicion que deseamos modificar
+     */
     public void actualizarEdicion(Edicion edicionActualizar) {//actualizamos edicion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE edicion SET "
@@ -53,6 +61,10 @@ public class EdicionDb {
 
     }
 
+    /**
+     * Elimina una edicion existente de la base de datos
+     * @param edicionEliminar Edicion que deseamos eliminar
+     */
     public void eliminarEdicion(Edicion edicionEliminar) {//eliminamos edicion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM edicion WHERE id=?;");
@@ -63,6 +75,10 @@ public class EdicionDb {
         }
     }
 
+    /**
+     * Lista todas las ediciones existentes en la base de datos
+     * @return Listado de ediciones
+     */
     public LinkedList<Edicion> leerEdiciones() { //mostramos todas las edicciones  y devolvemos en una lista
         LinkedList<Edicion> listaEdiciones = new LinkedList<>();
         try {
@@ -78,6 +94,11 @@ public class EdicionDb {
         return listaEdiciones;
     }
 
+    /**
+     * Busca una edicion en especifico dentro de la base de datos
+     * @param edicionBuscar Edicion que deseamos encontrar
+     * @return Edicion encontrada (null si no existe)
+     */
     public Edicion leerEdicion(Edicion edicionBuscar) {//leemos una edicion en especifico y lo devolvemos
         Edicion e = null;
 
@@ -95,7 +116,7 @@ public class EdicionDb {
         return e;
     }
 
-    public Edicion convertirEdicion(ResultSet resultado) {//del resultado de la busqueda obtener edicion
+    private Edicion convertirEdicion(ResultSet resultado) {//del resultado de la busqueda obtener edicion
         Edicion edicionDevolver = null;
         try {
             edicionDevolver = new Edicion(resultado.getInt(1), resultado.getString(2), resultado.getInt(3), resultado.getDate(4),

@@ -13,13 +13,17 @@ import java.util.List;
 import modelos.objetos.Informacion;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Informacion
  * @author jose_
  */
 public class InformacionDb {
     
     private Mensaje mensajes = new Mensaje();
     
+    /**
+     * Crea una nueva información en la base de datos
+     * @param informacion informacion que deseamos almacenar
+     */
     public void crear(Informacion informacion){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO informacion "
@@ -34,6 +38,10 @@ public class InformacionDb {
         }
     }
     
+    /**
+     * Modifica la informacion de una informacion existente en la base de datos
+     * @param informacion Informacion que deseamos modificar
+     */
     public void modificar(Informacion informacion){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE informacion SET "
@@ -49,6 +57,10 @@ public class InformacionDb {
         }
     }
     
+    /**
+     * Elimina una informacion exitente en la base de datos
+     * @param informacion Informacion que deseamos eliminar
+     */
     public void eliminar(Informacion informacion){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELTE FROM informacion WHERE id=?;");
@@ -60,6 +72,10 @@ public class InformacionDb {
         }
     }
     
+    /**
+     * Lista todas las informaciones existentes en la base de datos
+     * @return Listado de informaciones
+     */
     public List<Informacion> getInformaciones(){
         List<Informacion> informaciones = new ArrayList();
         try {
@@ -72,6 +88,11 @@ public class InformacionDb {
         return informaciones;
     }
     
+    /**
+     * Busca una informacion por el titulo 
+     * @param titulo Titulo por el cual buscar una informacion
+     * @return Informacion hallada (null si no existe)
+     */
     public Informacion getInformacion(String titulo){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM informacion WHERE titulo=?;");
@@ -84,6 +105,11 @@ public class InformacionDb {
         return null;
     }
     
+    /**
+     * Busca una informacion a partir de su identificador
+     * @param id Identificador para buscar la informacion
+     * @return Informacion hallada (null si no existe)
+     */
     public Informacion getInformacion(int id){
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM informacion WHERE id=?;");

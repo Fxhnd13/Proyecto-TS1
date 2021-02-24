@@ -8,12 +8,15 @@ import javax.swing.JOptionPane;
 import modelos.objetos.Categorizar;
 
 /**
- *
+ * Clase destinada al manejo de la conexion con la base de datos para CRUD de Categorizar
  * @author esmeralda
  */
 public class CategorizarDB {
     
-    
+    /**
+     * Crea una categorización
+     * @param categorizacionACrear Categorizacion que deseamos almacenar en la base de datos
+     */
     public void crearCategorizacion(Categorizar categorizacionACrear) {//creamos una categorizacion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO categorizar "
@@ -27,6 +30,12 @@ public class CategorizarDB {
         }
     }
 
+    /**
+     * Modifica la categorizacion que deseemos
+     * @param categorizacionActualizar Categorizacion que deseamos modificar
+     * @param idhHAnterior Identificador del hecho historico anterior
+     * @param idCategoriaAnterior Identificador de la categoria anterior
+     */
     public void actualizarCategorizacion(Categorizar categorizacionActualizar, int idhHAnterior, int idCategoriaAnterior) {//actualizamos categorizacion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("UPDATE categorizar SET "
@@ -44,6 +53,10 @@ public class CategorizarDB {
 
     }
 
+    /**
+     * Elimina una categorizacion
+     * @param categorizarEliminar Categorizacion que deseamos eliminar
+     */
     public void eliminarHechoHistorico(Categorizar categorizarEliminar) {//eliminamos categorizacion
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM categorizar  "
@@ -56,6 +69,10 @@ public class CategorizarDB {
         }
     }
 
+    /**
+     * Lista todas las categorizaciones que se han registrado en la base de datos
+     * @return Listado de categorizaciones
+     */
     public LinkedList<Categorizar> leerCategorizaciones() { //mostramos todas las categorizaciones y devolvemos en una lista
         LinkedList<Categorizar> listaCategorizaciones = new LinkedList<>();
         try {
@@ -71,6 +88,11 @@ public class CategorizarDB {
         return listaCategorizaciones;
     }
 
+    /**
+     * Revision si existe una categorizacion especificada 
+     * @param categorizacionBuscar Categorizacion que deseamos verificar
+     * @return Categorizacion hallada (null si no existe)
+     */
     public Categorizar leerHechoHistorico(Categorizar categorizacionBuscar) {//leemos una categorizacion en especifico y lo devolvemos
         Categorizar c = null;
 
@@ -90,7 +112,7 @@ public class CategorizarDB {
         return c;
     }
 
-    public Categorizar convertirCategorizacion(ResultSet resultado) {//del resultado de la busqueda obtener la categorizacion
+    private Categorizar convertirCategorizacion(ResultSet resultado) {//del resultado de la busqueda obtener la categorizacion
         Categorizar categorizacionDevolver = null;
         try {
             //aqui devuelve numeros del id de hecho historico y del id de la categoria
