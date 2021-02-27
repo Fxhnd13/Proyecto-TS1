@@ -101,5 +101,10 @@ public class FechaHaab {
     public void setCargador(Cargador cargador) {
         this.cargador = cargador;
     }
+
+    @Override
+    public String toString() {
+        return "FechaHaab{" + "nahual=("+nahual.getNombre()+","+nahual.getNombreYucateco()+"), winal=" + winal.getNombre() + '}';
+    }
     
 }

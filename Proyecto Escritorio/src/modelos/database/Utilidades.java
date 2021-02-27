@@ -5,11 +5,14 @@
  */
 package modelos.database;
 
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  * Clase destinada a la conversion de distintos formatos de fecha

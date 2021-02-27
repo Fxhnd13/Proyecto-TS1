@@ -7,6 +7,7 @@ package principal.menu;
 
 import api.login.ArchivoLogin;
 import frontend.gui.CalendarioHaab;
+import frontend.gui.RuedaCalendarica;
 import gui.infonahuales.VentanaInfoNahuales;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -356,7 +357,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Sin implementación
      */
     private void btnCholqij2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij2ActionPerformed
-        // TODO add your handling code here:
+        RuedaCalendarica rueda = new RuedaCalendarica();
+        rueda.setVisible(true);
     }//GEN-LAST:event_btnCholqij2ActionPerformed
 
     /**

@@ -80,5 +80,10 @@ public class FechaCholqij {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "FechaCholqij{" + "nahual=("+nahual.getNombre()+","+nahual.getNombreYucateco()+"),"+energia.getNombre()+ '}';
+    }
     
 }
