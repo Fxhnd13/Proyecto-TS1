@@ -10,6 +10,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelos.database.ConexionDb;
 import api.login.Login;
+import static javax.management.Query.gt;
+import static javax.management.Query.lt;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -37,6 +41,15 @@ public class main {
 */
 
             Login logeo = new Login();
+            try{
+                UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+            } catch (InstantiationException ex) {
+                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+            }
             logeo.iniciar();
             //logeo.setVisible(true);
             

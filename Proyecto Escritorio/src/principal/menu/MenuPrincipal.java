@@ -11,8 +11,10 @@ import frontend.gui.RuedaCalendarica;
 import gui.infonahuales.VentanaInfoNahuales;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.time.LocalDate;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import modelos.database.Utilidades;
 import modelos.objetos.Usuario;
 import principal.backend.perfil_usuario.Informacion;
 import principal.frontend.gui.calendari_cholquij.FrameCalendario;
@@ -348,7 +350,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param evt evento que lanza al procedimiento
      */
     private void btnCholqij1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij1ActionPerformed
-        CalendarioHaab calendario = new CalendarioHaab();
+        CalendarioHaab calendario = new CalendarioHaab(Utilidades.LocalDateToDate(LocalDate.now()));
         Centrador.center(calendario);
         calendario.setVisible(true);
     }//GEN-LAST:event_btnCholqij1ActionPerformed
@@ -357,7 +359,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * Sin implementación
      */
     private void btnCholqij2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij2ActionPerformed
-        RuedaCalendarica rueda = new RuedaCalendarica();
+        RuedaCalendarica rueda = new RuedaCalendarica(38, 321, Utilidades.LocalDateToDate(LocalDate.now()));
+        Centrador.center(rueda);
         rueda.setVisible(true);
     }//GEN-LAST:event_btnCholqij2ActionPerformed
 

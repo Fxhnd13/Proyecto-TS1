@@ -20,6 +20,7 @@ import modelos.database.FechaHaabDb;
 import modelos.database.InformacionDb;
 import modelos.database.Utilidades;
 import modelos.objetos.FechaHaab;
+import principal.menu.Centrador;
 
 /**
  * Frame destinado a las funcionalidades del calendario haab
@@ -27,13 +28,14 @@ import modelos.objetos.FechaHaab;
  */
 public class CalendarioHaab extends javax.swing.JFrame {
 
-    private Date fecha = Utilidades.LocalDateToDate(LocalDate.now());
+    private Date fecha;
     FechaHaabDb acceso = new FechaHaabDb();
     
     /**
      * Constructor, creates new form CalendarioHaab
      */
-    public CalendarioHaab() {
+    public CalendarioHaab(Date fecha) {
+        this.fecha = fecha;
         initComponents();
         date.setDate(fecha);
         escribirFecha();
@@ -62,6 +64,13 @@ public class CalendarioHaab extends javax.swing.JFrame {
         fechaActual.getCargador().colocarImagen(Cargador);
     }
     
+    public void nuevoFrame(){
+        CalendarioHaab nuevo = new CalendarioHaab(fecha);
+        this.dispose();
+        Centrador.center(nuevo);
+        nuevo.setVisible(true);
+    }
+    
     /**
      * Procedimiento para cambiar el cargador, kinal y winal activos, por el día siguiente
      */
@@ -72,7 +81,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         fecha = Utilidades.LocalDateToDate(temp);
         System.out.println("despues: "+fecha.toString());
         date.setDate(fecha);
-        escribirFecha();
+        nuevoFrame();
     }
     
     /**
@@ -86,6 +95,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         System.out.println("despues: "+fecha.toString());
         date.setDate(fecha);
         escribirFecha();
+        nuevoFrame();
     }
     
     /**
@@ -105,6 +115,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         System.out.println("despues: "+fecha.toString());
         date.setDate(fecha);
         escribirFecha();
+        nuevoFrame();
     }
     
     /**
@@ -124,6 +135,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         System.out.println("despues: "+fecha.toString());
         date.setDate(fecha);
         escribirFecha();
+        nuevoFrame();
     }
     
     /**
