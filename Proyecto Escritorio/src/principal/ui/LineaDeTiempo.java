@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import modelos.database.HechoHistoricoDb;
 import modelos.objetos.HechoHistorico;
 import modelos.objetos.Usuario;
+import principal.menu.Centrador;
 
 /**
  * Clase destianda a el manejo del frame para la linea de tiempo de los hechos historicos
@@ -97,7 +99,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
+            .addGap(0, 249, Short.MAX_VALUE)
         );
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
@@ -122,7 +124,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         });
 
         btnCholqij4.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnCholqij4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         btnCholqij4.setForeground(new java.awt.Color(0, 0, 0));
         btnCholqij4.setText("Eliminar Evento");
         btnCholqij4.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +134,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
         });
 
         jButton6.setBackground(new java.awt.Color(204, 204, 204));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Agregar Evento");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +181,7 @@ public class LineaDeTiempo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -225,12 +227,23 @@ public class LineaDeTiempo extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         AgregarEvento ae= new AgregarEvento();
         ae.setLinea(this);
+        Centrador.center(ae);
         ae.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnCholqij4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij4ActionPerformed
-
+        int opcion = JOptionPane.showConfirmDialog(this, "¿Esta seguro que desea eliminar este hecho historico?", "Eliminar", JOptionPane.WARNING_MESSAGE);
+        switch(opcion){
+            case JOptionPane.YES_OPTION:{
+                HechoHistoricoDb acceso = new HechoHistoricoDb();
+                acceso.eliminarHechoHistorico(eventos.get(index).getHechoHistorico());
+                eventos.remove(index);
+                btnSiguienteActionPerformed(null);
+                break;
+            }
+        }
     }//GEN-LAST:event_btnCholqij4ActionPerformed
+    
     private void addPrimerHecho() {
         System.out.println(eventos.size());
         if (eventos.size() > 0) {

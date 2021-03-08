@@ -1,0 +1,16 @@
+#12 Yefer Alvarado: Una línea de tiempo, describiendo parte de la historia maya, que la app pueda ser editada por distintos usuarios.
+
+#3 Mario Ramírez: Tal vez solo el tema, de: Solsticios y Equinoxios mayas, un tipo de guía para mostrar como afecto eso en su arquitectura y la precision de estos al saber cuando iban a suceder
+
+#5 Bryan Gomez: Investigar en la información astronómica para registrar ciclos recurrentes. Y poder adaptar un disenio adecuado para la aplicación, Este sistema debe de estar compuesto por varios tipos de calendarios que se relacionaban entre sí.
+
+#13 Jhonny Garcia: Solo habia pensado en un diseño de la aplicacion, usando tecnologias web, angular para el front y para el servidor nodejs junto con mongodb, aunque falta mas analisis y diseño 
+
+#1 José Soberanis: investigación sobre el diseño gráfico de las posibilidades para un timeline
+
+#8 Luis Gonzalez: Una aplicacion web, realizado mediante java y jsp, realizar una investigacion sobre los diferentes aspectos que afectaron en la creacion del calendario maya
+
+#10 Sergio Cifuentes:  Solo lei algunas definiciones históricas de la creación del calendario, ademas de eventos que ocurrieron simultáneamente.
+
+#11 había pensado en una aplicación web donde se pudiera apreciar en orden una linea de tiempo con los sucesos recolectados por los usuarios sobre los mayas, donde para poder agregar contenido sea necesario tener un usuario y este antes de ser publicado sea aprobado por un numero de personas de la comunidad.
+

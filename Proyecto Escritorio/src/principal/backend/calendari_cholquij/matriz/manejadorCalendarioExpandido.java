@@ -62,7 +62,9 @@ public void cuadricula(JPanel cuadroPanel, JTextArea infoText, JLabel nahual, JL
                         aux = (JLabel) cuadroPanel.add(new JLabel(){{
                             setOpaque(true);
                             setPreferredSize(new Dimension(5,15));
-                            setBackground(Color.DARK_GRAY);   
+                            setBackground(new Color(204,204,204));
+                            setForeground(new Color(0,0,0));
+                            setFont(new java.awt.Font("Comic Sans MS", 0, 12));
                                 }});
                         energias.add(aux); 
                         verInformacion(aux,i,j,infoText,nahual,energia);

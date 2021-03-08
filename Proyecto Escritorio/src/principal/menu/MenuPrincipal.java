@@ -56,13 +56,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        pnlMenu = new javax.swing.JPanel();
-        btnCholqij = new javax.swing.JButton();
-        btnCholqij1 = new javax.swing.JButton();
-        btnCholqij2 = new javax.swing.JButton();
-        btnNahuales = new javax.swing.JButton();
-        btnPerfil = new javax.swing.JButton();
-        btnLinea = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         infoUsuarioPane = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -75,107 +68,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         correoLbl = new javax.swing.JLabel();
         fechaLbl = new javax.swing.JLabel();
         telefonoLbl = new javax.swing.JLabel();
+        btnCholqij = new javax.swing.JButton();
+        btnCholqij1 = new javax.swing.JButton();
+        btnCholqij2 = new javax.swing.JButton();
+        btnNahuales = new javax.swing.JButton();
+        btnLinea = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
         setResizable(false);
-
-        pnlMenu.setBackground(new java.awt.Color(51, 153, 255));
-
-        btnCholqij.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnCholqij.setForeground(new java.awt.Color(0, 0, 0));
-        btnCholqij.setText("Calendario Cholqij");
-        btnCholqij.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCholqijActionPerformed(evt);
-            }
-        });
-
-        btnCholqij1.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnCholqij1.setForeground(new java.awt.Color(0, 0, 0));
-        btnCholqij1.setText("Calendario Haab");
-        btnCholqij1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCholqij1ActionPerformed(evt);
-            }
-        });
-
-        btnCholqij2.setBackground(new java.awt.Color(204, 204, 204));
-        btnCholqij2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnCholqij2.setForeground(new java.awt.Color(0, 0, 0));
-        btnCholqij2.setText("Rueda Calendarica");
-        btnCholqij2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCholqij2ActionPerformed(evt);
-            }
-        });
-
-        btnNahuales.setBackground(new java.awt.Color(204, 204, 204));
-        btnNahuales.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnNahuales.setForeground(new java.awt.Color(0, 0, 0));
-        btnNahuales.setText("Nahuales");
-        btnNahuales.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNahualesActionPerformed(evt);
-            }
-        });
-
-        btnPerfil.setBackground(new java.awt.Color(204, 204, 204));
-        btnPerfil.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnPerfil.setForeground(new java.awt.Color(0, 0, 0));
-        btnPerfil.setText("Editar datos");
-        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPerfilActionPerformed(evt);
-            }
-        });
-
-        btnLinea.setBackground(new java.awt.Color(204, 204, 204));
-        btnLinea.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        btnLinea.setForeground(new java.awt.Color(0, 0, 0));
-        btnLinea.setText("Linea de Tiempo");
-        btnLinea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLineaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
-        pnlMenu.setLayout(pnlMenuLayout);
-        pnlMenuLayout.setHorizontalGroup(
-            pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCholqij)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCholqij1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCholqij2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnNahuales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLinea)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                .addComponent(btnPerfil)
-                .addContainerGap())
-        );
-        pnlMenuLayout.setVerticalGroup(
-            pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCholqij)
-                    .addComponent(btnCholqij1)
-                    .addComponent(btnCholqij2)
-                    .addComponent(btnNahuales)
-                    .addComponent(btnPerfil)
-                    .addComponent(btnLinea))
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
 
         btnCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
         btnCerrarSesion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -263,32 +167,110 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(fechaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(infoUsuarioPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41))
         );
 
+        btnCholqij.setBackground(new java.awt.Color(204, 204, 204));
+        btnCholqij.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnCholqij.setForeground(new java.awt.Color(0, 0, 0));
+        btnCholqij.setText("Calendario Cholqij");
+        btnCholqij.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCholqijActionPerformed(evt);
+            }
+        });
+
+        btnCholqij1.setBackground(new java.awt.Color(204, 204, 204));
+        btnCholqij1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnCholqij1.setForeground(new java.awt.Color(0, 0, 0));
+        btnCholqij1.setText("Calendario Haab");
+        btnCholqij1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCholqij1ActionPerformed(evt);
+            }
+        });
+
+        btnCholqij2.setBackground(new java.awt.Color(204, 204, 204));
+        btnCholqij2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnCholqij2.setForeground(new java.awt.Color(0, 0, 0));
+        btnCholqij2.setText("Rueda Calendarica");
+        btnCholqij2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCholqij2ActionPerformed(evt);
+            }
+        });
+
+        btnNahuales.setBackground(new java.awt.Color(204, 204, 204));
+        btnNahuales.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnNahuales.setForeground(new java.awt.Color(0, 0, 0));
+        btnNahuales.setText("Nahuales");
+        btnNahuales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNahualesActionPerformed(evt);
+            }
+        });
+
+        btnLinea.setBackground(new java.awt.Color(204, 204, 204));
+        btnLinea.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnLinea.setForeground(new java.awt.Color(0, 0, 0));
+        btnLinea.setText("Linea de Tiempo");
+        btnLinea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLineaActionPerformed(evt);
+            }
+        });
+
+        btnPerfil.setBackground(new java.awt.Color(204, 204, 204));
+        btnPerfil.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        btnPerfil.setForeground(new java.awt.Color(0, 0, 0));
+        btnPerfil.setText("Editar datos");
+        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerfilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnCerrarSesion))
-                    .addComponent(infoUsuarioPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(infoUsuarioPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCholqij)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCholqij1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCholqij2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNahuales)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnLinea)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addComponent(btnPerfil)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCholqij)
+                    .addComponent(btnCholqij1)
+                    .addComponent(btnCholqij2)
+                    .addComponent(btnNahuales)
+                    .addComponent(btnPerfil)
+                    .addComponent(btnLinea))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(infoUsuarioPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCerrarSesion)
@@ -413,7 +395,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel nombreLbl;
-    private javax.swing.JPanel pnlMenu;
     private javax.swing.JLabel telefonoLbl;
     // End of variables declaration//GEN-END:variables
 }

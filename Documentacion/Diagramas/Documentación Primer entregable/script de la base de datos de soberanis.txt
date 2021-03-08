@@ -1,0 +1,118 @@
+CREATE DATABASE CalendarioMaya;
+USE CalendarioMaya;
+
+CREATE TABLE Cargador (
+	nombre VARCHAR(10) NOT NULL PRIMARY KEY,
+    descripcion VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE Winal (
+	id INT NOT NULL PRIMARY KEY,
+	nombre VARCHAR(10) NOT NULL,
+    descripcion VARCHAR(45) NOT NULL,
+    dias INT
+);
+
+CREATE TABLE Energia (
+	id INT NOT NULL PRIMARY KEY,
+	nombre VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE Informacion(
+	id INT NOT NULL PRIMARY KEY,
+	titulo VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(5000) NOT NULL
+);
+
+CREATE TABLE Categoria (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Nahual (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR (35) NOT NULL,
+	fechaInicio DATE NOT NULL,
+    fechaFinalizacion DATE NOT NULL,
+    rutaImagen VARCHAR(80),
+	significado VARCHAR(100),
+    descripcion VARCHAR(5000)
+);
+
+CREATE TABLE HechoHistorico (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	fechaInicio DATE NOT NULL,
+	fechaFinalizacion DATE NOT NULL,
+	titulo VARCHAR(150),
+    descripcion VARCHAR(5000)
+);
+
+CREATE TABLE Rol (
+	id INT NOT NULL PRIMARY KEY,
+	tipo VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Usuario (
+	username VARCHAR(40) NOT NULL PRIMARY KEY,
+	password VARCHAR (100) NOT NULL,
+	email VARCHAR (100) NOT NULL,
+	nombre VARCHAR (50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	nacimiento DATE,
+	telefono VARCHAR(15),
+	rol INT NOT NULL,
+    
+	CONSTRAINT FK_ROL_ROLES FOREIGN KEY(rol) REFERENCES Rol(id)
+); 
+
+CREATE TABLE Edicion (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR (35) NOT NULL,
+	idHechoHistorico INT NOT NULL,
+	fecha DATE NOT NULL,
+    creacion BOOLEAN NOT NULL,
+    
+	CONSTRAINT FK_ID_TEMA FOREIGN KEY(idHechoHistorico) REFERENCES HechoHistorico(id),
+	CONSTRAINT FK_ID_USER_R FOREIGN KEY(username) REFERENCES Usuario(username)
+);
+
+CREATE TABLE CalendarioHaab (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nahual INT NOT NULL,
+	winal INT NOT NULL,
+	nombre VARCHAR (35) NOT NULL,
+	fecha DATE NOT NULL,
+    descripcion VARCHAR(5000),
+
+	CONSTRAINT FK_Id_Nahual FOREIGN KEY(nahual) REFERENCES Nahual(id),
+	CONSTRAINT FK_Id_Winal FOREIGN KEY(winal) REFERENCES Winal(id)
+);
+
+CREATE TABLE CalendarioCholqij (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nahual INT NOT NULL,
+	energia INT NOT  NULL,
+	fecha DATE NOT NULL,
+    descripcion VARCHAR(5000),
+
+    CONSTRAINT FK_Id_Nagual FOREIGN KEY(nahual) REFERENCES Nahual(id),
+	CONSTRAINT FK_Id_Energia FOREIGN KEY(energia) REFERENCES Energia(id)
+);
+
+CREATE TABLE RuedaCalendarica (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	idDiaHaab INT NOT NULL,
+	idDiaCholqij INT NOT NULL,
+    descripcion VARCHAR(5000),
+
+    CONSTRAINT FK_R1 FOREIGN KEY(idDiaHaab) REFERENCES CalendarioHaab(id),
+    CONSTRAINT FK_R2 FOREIGN KEY(idDiaCholqij) REFERENCES CalendarioCholqij(id)
+);
+
+CREATE TABLE Categorizar (
+	idHechoHistorico INT NOT NULL,
+	idCategoria INT NOT NULL,
+    
+    CONSTRAINT FK_IDCATEGORIA_CATEGORIZAR_CATEGORIA FOREIGN KEY (idCategoria) REFERENCES Categoria(id),
+    CONSTRAINT FK_IDHECHO_CATEGORIZAR_HECHOHISTORICO FOREIGN KEY(idHechoHistorico) REFERENCES HechoHistorico(id)
+);

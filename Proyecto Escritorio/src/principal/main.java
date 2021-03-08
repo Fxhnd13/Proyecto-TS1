@@ -10,8 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelos.database.ConexionDb;
 import api.login.Login;
-import static javax.management.Query.gt;
-import static javax.management.Query.lt;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 

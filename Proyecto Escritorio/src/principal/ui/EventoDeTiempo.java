@@ -21,6 +21,14 @@ public class EventoDeTiempo extends javax.swing.JPanel {
         initComponents();
     }
 
+    public HechoHistorico getHechoHistorico() {
+        return hechoHistorico;
+    }
+
+    public void setHechoHistorico(HechoHistorico hechoHistorico) {
+        this.hechoHistorico = hechoHistorico;
+    }
+
     /**
      * Constructor
      * @param hechoHistorico hecho historico que debe representarse en la instancia del panel

@@ -48,12 +48,12 @@ public class RuedaCalendarica extends javax.swing.JFrame {
         fechaIngresada.setDate(fecha);
         calcularDia(dias);
         colocarValores();
-        pnlEnergiaCholqij.setBackground(new Color(255,255,255,50));
-        pnlNahualCholqij.setBackground(new Color(255,255,255,50));
-        pnlNahualHaab1.setBackground(new Color(255,255,255,50));
-        pnlWinalHaab.setBackground(new Color(255,255,255,50));
-        jPanel1.setBackground(new Color(255,255,255,50));
-        jPanel4.setBackground(new Color(255,255,255,50));
+        pnlEnergiaCholqij.setBackground(new Color(255,255,255,100));
+        pnlNahualCholqij.setBackground(new Color(255,255,255,100));
+        pnlNahualHaab1.setBackground(new Color(255,255,255,100));
+        pnlWinalHaab.setBackground(new Color(255,255,255,100));
+        jPanel1.setBackground(new Color(255,255,255,100));
+        jPanel4.setBackground(new Color(255,255,255,100));
     }
 
     /**
@@ -131,9 +131,9 @@ public class RuedaCalendarica extends javax.swing.JFrame {
     
     public void nuevoFrame(){
         RuedaCalendarica nuevo = new RuedaCalendarica(noCholqijPivote, noHaabPivote, fecha);
-        this.dispose();
         Centrador.center(nuevo);
         nuevo.setVisible(true);
+        this.dispose();
     }
     
     /**
@@ -165,11 +165,11 @@ public class RuedaCalendarica extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(900, 330));
 
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha Haab", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel4.setBackground(new java.awt.Color(187, 187, 187));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha Haab", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        pnlNahualHaab1.setBackground(new java.awt.Color(0, 0, 0));
-        pnlNahualHaab1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nahual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        pnlNahualHaab1.setBackground(new java.awt.Color(187, 187, 187));
+        pnlNahualHaab1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nahual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         pnlNahualHaab1.setForeground(new java.awt.Color(255, 255, 255));
 
         lblNahualHaab1.setText("<Sin Imagen>");
@@ -191,8 +191,8 @@ public class RuedaCalendarica extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlWinalHaab.setBackground(new java.awt.Color(0, 0, 0));
-        pnlWinalHaab.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        pnlWinalHaab.setBackground(new java.awt.Color(187, 187, 187));
+        pnlWinalHaab.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Winal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         pnlWinalHaab.setForeground(new java.awt.Color(255, 255, 255));
 
         lblWinalHaab.setText("<Sin Imagen>");
@@ -235,11 +235,11 @@ public class RuedaCalendarica extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha Cholqi'j", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(187, 187, 187));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fecha Cholqi'j", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
-        pnlEnergiaCholqij.setBackground(new java.awt.Color(0, 0, 0));
-        pnlEnergiaCholqij.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Energia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        pnlEnergiaCholqij.setBackground(new java.awt.Color(187, 187, 187));
+        pnlEnergiaCholqij.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Energia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
         lblEnergiaCholqij.setText("<Sin Imagen>");
 
@@ -260,8 +260,8 @@ public class RuedaCalendarica extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        pnlNahualCholqij.setBackground(new java.awt.Color(0, 0, 0));
-        pnlNahualCholqij.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nahual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        pnlNahualCholqij.setBackground(new java.awt.Color(187, 187, 187));
+        pnlNahualCholqij.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nahual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
         pnlNahualCholqij.setForeground(new java.awt.Color(255, 255, 255));
 
         lblNahualCholqij.setText("<Sin Imagen>");
@@ -305,7 +305,7 @@ public class RuedaCalendarica extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Siguiente Dia");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +315,7 @@ public class RuedaCalendarica extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Dia Anterior");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -335,7 +335,7 @@ public class RuedaCalendarica extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Informacion Rueda Calendarica");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -387,7 +387,7 @@ public class RuedaCalendarica extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addComponent(jButton4))
                     .addComponent(fechaIngresada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
@@ -436,16 +436,13 @@ public class RuedaCalendarica extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblEnergiaCholqij;
     private javax.swing.JLabel lblNahualCholqij;
-    private javax.swing.JLabel lblNahualHaab;
     private javax.swing.JLabel lblNahualHaab1;
     private javax.swing.JLabel lblWinalHaab;
     private javax.swing.JPanel pnlEnergiaCholqij;
     private javax.swing.JPanel pnlNahualCholqij;
-    private javax.swing.JPanel pnlNahualHaab;
     private javax.swing.JPanel pnlNahualHaab1;
     private javax.swing.JPanel pnlWinalHaab;
     // End of variables declaration//GEN-END:variables

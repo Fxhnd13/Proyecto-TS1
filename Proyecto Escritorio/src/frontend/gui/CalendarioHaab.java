@@ -39,6 +39,10 @@ public class CalendarioHaab extends javax.swing.JFrame {
         initComponents();
         date.setDate(fecha);
         escribirFecha();
+        panel1.setBackground(new Color(255,255,255,100));
+        panel2.setBackground(new Color(255,255,255,100));
+        panel3.setBackground(new Color(255,255,255,100));
+        panel4.setBackground(new Color(255,255,255,100));
         colocarFondo();
     }
     
@@ -167,8 +171,8 @@ public class CalendarioHaab extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        panel2.setBackground(new java.awt.Color(0, 0, 0));
-        panel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        panel2.setBackground(new java.awt.Color(187, 187, 187));
+        panel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         Nahual.setText(" ");
 
@@ -189,8 +193,8 @@ public class CalendarioHaab extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel1.setBackground(new java.awt.Color(0, 0, 0));
-        panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        panel1.setBackground(new java.awt.Color(187, 187, 187));
+        panel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cargador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         Cargador.setText(".");
 
@@ -211,11 +215,11 @@ public class CalendarioHaab extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel4.setBackground(new java.awt.Color(0, 0, 0));
-        panel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        panel4.setBackground(new java.awt.Color(187, 187, 187));
+        panel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Buscar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -243,13 +247,13 @@ public class CalendarioHaab extends javax.swing.JFrame {
             .addGroup(panel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addContainerGap())
         );
 
-        panel3.setBackground(new java.awt.Color(0, 0, 0));
-        panel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        panel3.setBackground(new java.awt.Color(187, 187, 187));
+        panel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
 
         Winal.setText(" ");
 
@@ -271,7 +275,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         );
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Informacion Kinal");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -281,7 +285,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton7.setBackground(new java.awt.Color(204, 204, 204));
-        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setText("Informacion Winal");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +295,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton8.setBackground(new java.awt.Color(204, 204, 204));
-        jButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(0, 0, 0));
         jButton8.setText("Informacion Calendario");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +305,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Anterior");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -311,7 +315,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
-        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Siguiente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -321,7 +325,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton6.setBackground(new java.awt.Color(204, 204, 204));
-        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 0, 0));
         jButton6.setText("Anterior");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -331,7 +335,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
-        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Siguiente");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -380,18 +384,17 @@ public class CalendarioHaab extends javax.swing.JFrame {
                         .addGap(11, 11, 11)
                         .addComponent(jButton7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton8)
+                            .addComponent(jButton5)
+                            .addComponent(jButton2)))
                     .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton5)))
+                            .addComponent(jButton6)))
                     .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
