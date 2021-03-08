@@ -25,9 +25,10 @@ La cultura maya se refiere a una civilización mesoamericana que destacó a lo l
  * JavaDevelopmentKit15 (https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)
  * PHP 8 (https://www.php.net/downloads)
  * Apache HTTP Server (https://httpd.apache.org)
+ * xampp (opcional, para instalar en conjunto el servidor y php https://www.apachefriends.org/es/index.html)
  * Editor de texto o IDE a preferencia
 
-###Para despligue
+### Para despligue
 
  * Apache HTTP Server
  * Java (Runtime edition o development kit)
